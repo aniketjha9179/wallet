@@ -1,6 +1,6 @@
 import Logo from "/reapzo.png";
 import React, { useState } from "react";
-import { ArrowLeft, Wallet, Trophy, Gift, Info, ChevronDown, ChevronRight, CreditCard, Star, Zap } from "lucide-react";
+import { ArrowLeft, Wallet, Trophy, Gift, Info, ChevronDown, ChevronRight, CreditCard, Star, Zap, Eye, EyeOff } from "lucide-react";
 
 // Modern Slider Component
 const ModernSlider = () => {
@@ -99,12 +99,17 @@ const ModernSlider = () => {
 const WalletPage = () => {
   const [showDepositBreakdown, setShowDepositBreakdown] = useState(false);
   const [showPointsBreakdown, setShowPointsBreakdown] = useState(false);
+  const [isBalanceHidden, setIsBalanceHidden] = useState(false);
+
+  const toggleBalanceVisibility = () => {
+    setIsBalanceHidden(!isBalanceHidden);
+  };
 
   return (
     <div className="bg-gray-50 min-h-screen font-sans">
       {/* Header */}
       <div className="bg-white shadow-sm">
-        <div className="flex justify-center items-center py-4 px-4">
+        <div className="flex justify-center items-center py-1 px-2">
           <div className="flex items-center space-x-2">
             
             <div className="bg-white py-3 flex justify-center items-center border-b border-gray-200">
@@ -121,45 +126,55 @@ const WalletPage = () => {
       </div>
 
       {/* Total Balance Card */}
-      <div className="mx-4  relative">
+      <div className="  ">
         <div className="bg-white rounded-2xl shadow-lg p-2 border border-gray-100">
-          <div className="text-center">
-            <p className="text-3xl font-bold text-gray-900 mb-1">₹6.50</p>
-            <p className="text-gray-500 text-sm">Total Balance</p>
+          <div className="ml-8 flex items-center justify-between">
+            <div>
+              <p className="text-2xl font-bold text-gray-900 mb-1">
+                {isBalanceHidden ? '₹****' : '₹6.50'}
+              </p>
+              <p className="text-gray-500 text-sm">Total Balance</p>
+            </div>
+            <div className="mr-4">
+              <button 
+                onClick={toggleBalanceVisibility}
+                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                aria-label={isBalanceHidden ? 'Show balance' : 'Hide balance'}
+              >
+                {isBalanceHidden ? (
+                  <Eye className="w-5 h-5 text-gray-500" />
+                ) : (
+                  <EyeOff className="w-5 h-5 text-gray-500" />
+                )}
+              </button>
+            </div>
           </div>
           
           {/* Quick Actions */}
-          <div className="flex justify-center gap-4 mt-6">
-            <button className="flex items-center gap-2 bg-blue-50 text-blue-600 px-4 py-2 rounded-xl font-medium">
-              <CreditCard className="w-4 h-4" />
-              Add Money
-            </button>
-            <button className="flex items-center gap-2 bg-green-50 text-green-600 px-4 py-2 rounded-xl font-medium">
-              <Trophy className="w-4 h-4" />
-              Withdraw
-            </button>
-          </div>
+        
         </div>
       </div>
 
       {/* Deposit Section */}
-      <div className="mx-4 mt-6">
+      <div className="mx-2 mt-5">
         <div className="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100">
           <div className="bg-gradient-to-r from-green-50 to-emerald-100 p-4">
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
                   <Wallet className="w-6 h-6 text-green-600" />
                 </div>
                 <div>
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-gray-700 font-medium">Deposit</span>
+                    <span className="text-gray-700 text-sm font-medium">Deposit</span>
                     <Info className="w-4 h-4 text-gray-400" />
                   </div>
-                  <p className="text-xl font-bold text-gray-900">₹5.93</p>
+                  <p className="text-lg font-bold text-gray-900">
+                    {isBalanceHidden ? '₹****' : '₹5.93'}
+                  </p>
                 </div>
               </div>
-              <button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-xl font-medium transition-colors">
+              <button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-xl text-sm font-medium transition-colors">
                 ADD CASH
               </button>
             </div>
@@ -177,7 +192,9 @@ const WalletPage = () => {
             <div className="px-4 pb-4 space-y-2 border-t border-gray-100">
               <div className="flex justify-between text-sm py-2">
                 <span className="text-gray-600">Added via UPI</span>
-                <span className="font-medium">₹5.93</span>
+                <span className="font-medium">
+                  {isBalanceHidden ? '₹****' : '₹5.93'}
+                </span>
               </div>
             </div>
           )}
@@ -189,15 +206,17 @@ const WalletPage = () => {
         <div className="bg-white rounded-2xl shadow-sm p-4 border border-gray-100">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">
                 <Trophy className="w-6 h-6 text-yellow-600" />
               </div>
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="text-gray-700 font-medium">Winnings</span>
+                  <span className="text-gray-700 text-sm font-medium">Winnings</span>
                   <Info className="w-4 h-4 text-gray-400" />
                 </div>
-                <p className="text-xl font-bold text-gray-900">₹0.50</p>
+                <p className="text-lg font-bold text-gray-900">
+                  {isBalanceHidden ? '₹****' : '₹0.50'}
+                </p>
               </div>
             </div>
             <button className="border-2 border-red-500 text-red-500 px-4 py-2 rounded-xl font-semibold hover:bg-red-50 transition-colors">
@@ -220,15 +239,17 @@ const WalletPage = () => {
         <div className="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100">
           <div className="p-4">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
                 <Gift className="w-6 h-6 text-purple-600" />
               </div>
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="text-gray-700 font-medium">Reward Points</span>
+                  <span className="text-gray-700 text-sm font-medium">Reward Points</span>
                   <Info className="w-4 h-4 text-gray-400" />
                 </div>
-                <p className="text-xl font-bold text-gray-900">₹0.07</p>
+                <p className="text-lg font-bold text-gray-900">
+                  {isBalanceHidden ? '₹****' : '₹0.07'}
+                </p>
               </div>
             </div>
           </div>
@@ -245,11 +266,15 @@ const WalletPage = () => {
             <div className="px-4 pb-4 space-y-2">
               <div className="flex justify-between text-sm py-2">
                 <span className="text-gray-600">Daily login bonus</span>
-                <span className="font-medium">₹0.05</span>
+                <span className="font-medium">
+                  {isBalanceHidden ? '₹****' : '₹0.05'}
+                </span>
               </div>
               <div className="flex justify-between text-sm py-2">
                 <span className="text-gray-600">Referral bonus</span>
-                <span className="font-medium">₹0.02</span>
+                <span className="font-medium">
+                  {isBalanceHidden ? '₹****' : '₹0.02'}
+                </span>
               </div>
             </div>
           )}
