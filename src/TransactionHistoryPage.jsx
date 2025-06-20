@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ArrowLeft, Copy, Check, X, ChevronRight, Calendar, CreditCard, Download, TrendingUp, TrendingDown, FileText, AlertCircle, Clock, XCircle, CheckCircle } from "lucide-react";
 import Logo from '/reapzo.png'
+import TransactionLogo from '/Png logo.png'
 const TransactionHistoryPage = () => {
   const [activeMainTab, setActiveMainTab] = useState('deposits');
   const [activeSubTab, setActiveSubTab] = useState('all');
@@ -261,8 +262,9 @@ const TransactionHistoryPage = () => {
             <div className={`${getModalHeaderColor(selectedTransaction.status)} text-white p-4 rounded-t-2xl flex-shrink-0`}>
               <div className="flex justify-between items-center mb-3">
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 bg-white bg-opacity-20 rounded-lg flex items-center justify-center">
-                    {getStatusIcon(selectedTransaction.status)}
+                  <div className="w-8 h-8  bg-opacity-20 rounded-lg flex items-center justify-center">
+                    {/* {getStatusIcon(selectedTransaction.status)} */}
+                        <img src={TransactionLogo} className="h-6 w-16 object-contain" />
                   </div>
                   <div>
                     <h2 className="text-lg font-bold">Transaction Details</h2>
@@ -311,10 +313,6 @@ const TransactionHistoryPage = () => {
 
               {selectedTransaction.status === 'success' && (
                 <div className="bg-green-50 border border-green-200 rounded-lg p-3">
-                  <div className="flex items-center gap-2 mb-1">
-                    <CheckCircle className="w-4 h-4 text-green-600" />
-                    <span className="font-semibold text-green-800 text-sm">Transaction Successful</span>
-                  </div>
                   <p className="text-xs text-green-700">
                     Your deposit has been processed successfully.
                   </p>
@@ -322,10 +320,10 @@ const TransactionHistoryPage = () => {
               )}
 
               {/* Transaction Info */}
-              <div className="bg-gray-50 rounded-lg p-3 space-y-3">
+              <div className="bg-gray-50 rounded-lg  ">
                 <h3 className="font-bold text-gray-900 text-sm">Transaction Information</h3>
                 
-                <div className="space-y-2">
+                <div className="space-y-1">
                   <div className="flex justify-between items-center">
                     <span className="text-gray-600 text-xs">From UPI ID</span>
                     <div className="flex items-center gap-1">
@@ -369,59 +367,7 @@ const TransactionHistoryPage = () => {
               {/* Deposit Details - Only show for successful transactions */}
               {selectedTransaction.status === 'success' && (
                 <>
-                  <div className="bg-blue-50 rounded-lg p-3 space-y-3">
-                    <h3 className="font-bold text-blue-900 text-sm">Deposit Breakdown</h3>
-                    
-                    <div className="space-y-2">
-                      <div className="flex justify-between items-center">
-                        <span className="text-blue-700 text-xs">Deposit Amount (excl. tax)</span>
-                        <span className="font-bold text-blue-900 text-sm">₹{selectedTransaction.depositAmount}</span>
-                      </div>
-
-                      <div className="flex justify-between items-center">
-                        <span className="text-blue-700 text-xs">Government Tax (28%)</span>
-                        <span className="font-bold text-blue-900 text-sm">₹{selectedTransaction.govTax}</span>
-                      </div>
-
-                      <div className="border-t border-blue-200 pt-2">
-                        <div className="flex justify-between items-center">
-                          <span className="font-bold text-blue-900 text-sm">Total Paid</span>
-                          <span className="font-bold text-blue-900 text-lg">₹{selectedTransaction.amount}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-3 border border-green-200">
-                    <div className="flex justify-between items-center">
-                      <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                          <TrendingUp className="w-4 h-4 text-green-600" />
-                        </div>
-                        <div>
-                          <span className="text-green-800 font-bold text-sm">Discount Points</span>
-                          <p className="text-green-700 text-xs">Added to account</p>
-                        </div>
-                      </div>
-                      <span className="text-green-800 font-bold text-lg">+₹{selectedTransaction.discountPoints}</span>
-                    </div>
-                  </div>
-
-                  {/* Tax Invoice */}
-                  <div className="border-2 border-dashed border-gray-200 rounded-lg p-3 hover:border-blue-300 transition-colors cursor-pointer">
-                    <div className="flex justify-between items-center">
-                      <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                          <Download className="w-4 h-4 text-blue-600" />
-                        </div>
-                        <div>
-                          <span className="font-bold text-gray-900 text-sm">Tax Invoice</span>
-                          <p className="text-xs text-gray-600">Download receipt</p>
-                        </div>
-                      </div>
-                      <ChevronRight className="w-4 h-4 text-gray-400" />
-                    </div>
-                  </div>
+                
                 </>
               )}
             </div>
