@@ -131,7 +131,7 @@ const WalletPage = () => {
           <div className="ml-8 flex items-center justify-between">
             <div>
               <p className="text-2xl font-bold text-gray-900 mb-1">
-                {isBalanceHidden ? '₹****' : '₹6.50'}
+                {isBalanceHidden ? '₹****' : '₹50,000'}
               </p>
               <p className="text-gray-500 text-sm">Total Balance</p>
             </div>
