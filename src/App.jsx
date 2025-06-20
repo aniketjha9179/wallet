@@ -1,9 +1,10 @@
 import React from 'react'
-import WalletPage from './WalletPage'
+import TransactionHistoryPage from './TransactionHistoryPage'
+
 
 const App = () => {
   return (
-    <WalletPage />
+    <TransactionHistoryPage />
   )
 }
 
