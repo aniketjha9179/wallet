@@ -77,7 +77,12 @@ const LudoLandingPage = () => {
   ];
 
   const menuItems = [
-    { icon: User, label: "My Profile", path: "/profile", color: "text-green-600" },
+    {
+      icon: User,
+      label: "My Profile",
+      path: "/profile",
+      color: "text-green-600",
+    },
     {
       icon: Aperture,
       label: "My Trips",
@@ -96,7 +101,12 @@ const LudoLandingPage = () => {
       path: "/friends",
       color: "text-orange-400",
     },
-    { icon: Gift, label: "Hi-Five", path: "/rewards", color: "text-purple-400" },
+    {
+      icon: Gift,
+      label: "Hi-Five",
+      path: "/rewards",
+      color: "text-purple-400",
+    },
     { icon: Wallet, label: "Wallet", path: "/wallet", color: "text-green-400" },
     {
       icon: Settings,
@@ -170,8 +180,9 @@ const LudoLandingPage = () => {
 
       {/* Enhanced Curved Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-full w-80 bg-white/95 backdrop-blur-xl shadow-2xl transform transition-all duration-500 ease-out z-50 flex flex-col ${sidebarOpen ? "translate-x-0" : "-translate-x-full"
-          }`}
+        className={`fixed top-0 left-0 h-full w-80 bg-white/95 backdrop-blur-xl shadow-2xl transform transition-all duration-500 ease-out z-50 flex flex-col ${
+          sidebarOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
         style={{
           borderTopRightRadius: "24px",
           borderBottomRightRadius: "24px",
@@ -196,19 +207,17 @@ const LudoLandingPage = () => {
 
             <div className="flex items-center gap-4 mb-6">
               <div>
-                <div className="text-xl text-black font-bold">
-                  Sumit Kumar
-                </div>
+                <div className="text-xl text-black font-bold">Sumit Kumar</div>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-            <div className="bg-gradient-to-br from-green-50 to-green-200 backdrop-blur-sm rounded-lg px-2 py-1 flex items-center gap-2 shadow-md hover:shadow-lg border border-green-300 hover:scale-105 transition-all duration-300">
-  <CheckCircle className="h-5 w-5 text-green-400" />
-  <span className="text-sm text-green-500 font-bold">
-    Verified
-  </span>
-</div>
+              <div className=" bg-[#e6f5f0] backdrop-blur-sm rounded-lg px-2 py-1 flex items-center gap-2 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
+                <CheckCircle className="h-4 w-4 text-[#108943]" />
+                <span className="text-sm text-[#108943] font-bold">
+                  Verified
+                </span>
+              </div>
               <div className="bg-red-50 backdrop-blur-sm rounded-md px-2 py-1 flex items-center gap-1 shadow-md">
                 <HiOutlineCurrencyRupee className="h-4 w-4 text-yellow-500" />
                 <span className="text-amber-800 text-sm font-bold">28</span>
@@ -293,10 +302,11 @@ const LudoLandingPage = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentPromo(index)}
-                  className={`w-1 h-1 rounded-full transition-all duration-300 ${index === currentPromo
+                  className={`w-1 h-1 rounded-full transition-all duration-300 ${
+                    index === currentPromo
                       ? "bg-white scale-125"
                       : "bg-white/50 hover:bg-white/70"
-                    }`}
+                  }`}
                 />
               ))}
             </div>
