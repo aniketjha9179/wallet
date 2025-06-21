@@ -1,5 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, User, MapPin, CreditCard, Users, Gift, Wallet, Settings, Shield, LogOut, Play, Star, Trophy, Zap, Crown, Coins, CirclePlus, Plus } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import {
+  Menu,
+  X,
+  User,
+  MapPin,
+  CreditCard,
+  Users,
+  Gift,
+  Wallet,
+  Settings,
+  Shield,
+  LogOut,
+  Play,
+  Star,
+  Trophy,
+  Crown,
+  Plus,
+  Aperture,
+  ShieldCheck,
+} from "lucide-react";
+import { HiOutlineCurrencyRupee } from "react-icons/hi2";
+import Logo from "/FINAL LOGO jpeg.jpg";
 
 const LudoLandingPage = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -11,22 +32,22 @@ const LudoLandingPage = () => {
       title: "🔥 Summer Special",
       subtitle: "Win Big This Season - Up to ₹50K",
       bgColor: "from-orange-100 to-pink-300",
-      icon: "🏆"
+      icon: "🏆",
     },
     {
       id: 2,
       title: "⚡ Daily Bonus",
       subtitle: "Login & Get ₹500 Free Coins",
       bgColor: "from-green-200 to-purple-800",
-      icon: "💰"
+      icon: "💰",
     },
     {
       id: 3,
       title: "👑 Mega Tournament",
       subtitle: "₹1 Crore Prize Pool - Join Now!",
       bgColor: "from-purple-100 to-red-300",
-      icon: "🎯"
-    }
+      icon: "🎯",
+    },
   ];
 
   const games = [
@@ -34,19 +55,16 @@ const LudoLandingPage = () => {
       id: 1,
       image: "/game IMG_8657.PNG",
       contest: "Mega Contest",
-  
     },
     {
       id: 2,
       image: "/game IMG_8657.PNG",
       contest: "Super Contest",
-   
     },
     {
       id: 3,
       image: "/game IMG_8657.PNG",
       contest: "Premium Contest",
-     
     },
     {
       id: 4,
@@ -57,22 +75,45 @@ const LudoLandingPage = () => {
       players: "756",
       timeLeft: "6h 30m",
       difficulty: "Hard",
-      winRate: "65%"
-    }
+      winRate: "65%",
+    },
   ];
 
   const menuItems = [
-    { icon: User, label: "My Profile", path: "/profile", color: "text-blue-600" },
-    { icon: MapPin, label: "Game History", path: "/history", color: "text-green-600" },
-    { icon: CreditCard, label: "Payment Methods", path: "/cards", color: "text-purple-600" },
-    { icon: Users, label: "Friends & Referrals", path: "/friends", color: "text-orange-600" },
-    { icon: Gift, label: "Rewards & Bonuses", path: "/rewards", color: "text-pink-600" },
-    { icon: Wallet, label: "Wallet", path: "/wallet", color: "text-green-500" },
-    { icon: Settings, label: "Settings", path: "/settings", color: "text-gray-600" },
-    { icon: Shield, label: "Privacy & Security", path: "/privacy", color: "text-red-600" }
+    { icon: User, label: "My Profile", path: "/profile", color: "text-black" },
+    {
+      icon: Aperture,
+      label: "My Trips",
+      path: "/history",
+      color: "text-black",
+    },
+    {
+      icon: CreditCard,
+      label: "Saved Cards",
+      path: "/cards",
+      color: "text-black",
+    },
+    {
+      icon: Users,
+      label: "Saved Travellers",
+      path: "/friends",
+      color: "text-black",
+    },
+    { icon: Gift, label: "Hi-Five", path: "/rewards", color: "text-black" },
+    { icon: Wallet, label: "Wallet", path: "/wallet", color: "text-black" },
+    {
+      icon: Settings,
+      label: "Settings",
+      path: "/settings",
+      color: "text-gray-600",
+    },
+    {
+      icon: ShieldCheck,
+      label: "Privacy Rights",
+      path: "/privacy",
+      color: "text-black",
+    },
   ];
-
-
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -84,8 +125,6 @@ const LudoLandingPage = () => {
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
-
- 
 
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
@@ -106,18 +145,19 @@ const LudoLandingPage = () => {
             <Menu className="h-6 w-6 text-black group-hover:scale-110 transition-transform" />
           </button>
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">🎲</span>
+            <div className="w-18 h-10   rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-lg ">
+                <img src={Logo} className=" " />
+              </span>
             </div>
-            <h1 className="text-xl font-bold text-black">Reapzo</h1>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="bg-black/80 backdrop-blur-sm rounded-full px-3 py-2 flex items-center gap-1">
-              <Wallet className="h-4 w-4 text-white" />
-              <span className="text-white text-sm font-semibold">₹ 2,450</span>
-              <div className="bg-green-400 rounded-full p-1">
+          <div className="flex items-center gap-1 ">
+            <div className="bg-black/80 backdrop-blur-md  rounded-full px-2 py-2 flex items-center gap-2 shadow-md">
+              <Wallet className="h-3 w-3 text-white" />
+              <span className="text-white text-xs font-semibold  ">₹2,450</span>
+              <button className="bg-white/10 hover:bg-white/20 rounded-full p-1 transition">
                 <Plus className="h-3 w-3 text-white" />
-              </div>
+              </button>
             </div>
           </div>
         </div>
@@ -131,54 +171,72 @@ const LudoLandingPage = () => {
         ></div>
       )}
 
-      {/* Enhanced Sidebar */}
+      {/* Enhanced Curved Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-full w-80 bg-white/95 backdrop-blur-xl shadow-2xl transform transition-all duration-500 ease-out z-50 flex flex-col ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-          }`}
+        className={`fixed top-0 left-0 h-full w-80 bg-white/95 backdrop-blur-xl shadow-2xl transform transition-all duration-500 ease-out z-50 flex flex-col ${
+          sidebarOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+        style={{
+          borderTopRightRadius: "24px",
+          borderBottomRightRadius: "24px",
+          clipPath: sidebarOpen ? "none" : "inset(0 100% 0 0)",
+        }}
       >
         {/* Profile Section */}
-        <div className="p-6  bg-gray-700 text-white relative overflow-hidden">
-          <div className="absolute inset-0 bg-black/10"></div>
+        <div
+          className="p-6 bg-gray-100 text-black relative overflow-hidden"
+          style={{ borderTopRightRadius: "24px" }}
+        >
           <div className="relative z-10">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-bold">Profile</h2>
+              <h2 className="text-gray-600 text-sm">You are logged in with</h2>
               <button
                 onClick={toggleSidebar}
-                className="p-2 rounded-lg hover:bg-white/10 transition-colors"
+                className="p-1 rounded-lg hover:bg-gray-200 transition-colors"
               >
-                <X className="h-5 w-5" />
+                <X className="h-5 w-5 text-gray-600" />
               </button>
             </div>
 
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center text-2xl">
-                👤
-              </div>
+            <div className="flex items-center gap-4 mb-6">
               <div>
-                <div className="text-lg font-bold">Sumit Kumar</div>
-                <div className="text-white/80 text-sm">Level 12 Player</div>
+                <div className="text-xl text-black font-bold">
+                  +91 8000050810
+                </div>
               </div>
             </div>
 
-            <div className="flex items-center gap-4">
-              <div className="bg-yellow-500/20 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-2">
-                <Crown className="h-4 w-4 text-yellow-300" />
-                <span className="text-yellow-300 text-sm font-medium">LOYAL MEMBER</span>
+            <div className="flex items-center gap-3">
+              <div className="bg-gradient-to-r from-yellow-100 to-yellow-300 backdrop-blur-sm rounded-md   px-3 py-2 flex items-center gap-2  border  border-l-amber-400 border-t-amber-300 border-b-amber-400 border-r border-r-white">
+                <Crown className="h-4 w-4 text-yellow-600 -rotate-12" />
+                <span className="text-amber-800 text-sm font-semibold">
+                  LOYAL MEMBER
+                </span>
+              </div>
+              <div className="bg-red-50 backdrop-blur-sm rounded-md px-1 py-2 flex items-center gap-1 shadow-md">
+                <HiOutlineCurrencyRupee className="h-4 w-4 text-yellow-500" />
+                <span className="text-amber-800 text-sm font-bold">28</span>
+              </div>
+              <div className="bg-red-50 backdrop-blur-sm rounded-md px-1 py-2 flex items-center gap-1 shadow-md">
+                <Wallet className="h-4 w-4 text-amber-800" />
+                <span className="text-amber-800 text-sm font-bold">0</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Menu Items */}
-        <nav className="flex-1 overflow-y-auto p-4">
+        <nav className="flex-1 overflow-y-auto p-2">
           <ul className="space-y-2">
             {menuItems.map((item, index) => (
               <li key={index}>
                 <a
                   href={item.path}
-                  className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 transition-all duration-200 text-gray-700 hover:text-gray-900 group"
+                  className="flex items-center gap-3 px-4 py-1 rounded-xl hover:bg-gray-100 transition-all duration-200 text-gray-700 hover:text-gray-900 group"
                 >
-                  <div className={`p-2 rounded-lg bg-gray-100 group-hover:bg-white transition-colors ${item.color}`}>
+                  <div
+                    className={`p-2 rounded-lg bg-gray-100 group-hover:bg-white transition-colors ${item.color}`}
+                  >
                     <item.icon className="h-5 w-5" />
                   </div>
                   <span className="font-medium">{item.label}</span>
@@ -189,7 +247,10 @@ const LudoLandingPage = () => {
         </nav>
 
         {/* Logout Button */}
-        <div className="p-4 border-t border-gray-200">
+        <div
+          className="p-4 border-t border-gray-200"
+          style={{ borderBottomRightRadius: "24px" }}
+        >
           <button className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-red-50 transition-colors text-red-600 hover:text-red-700 w-full group">
             <div className="p-2 rounded-lg bg-red-50 group-hover:bg-red-100 transition-colors">
               <LogOut className="h-5 w-5" />
@@ -203,7 +264,7 @@ const LudoLandingPage = () => {
       <main className="p-4 pb-24 relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Enhanced Promotion Cards */}
-         <div className="mb-8 relative overflow-hidden rounded-3xl shadow-2xl w-full max-w-[500px] mx-auto">
+          <div className="mb-8 relative overflow-hidden rounded-3xl shadow-2xl w-full max-w-[500px] mx-auto">
             <div
               className="flex transition-transform duration-700 ease-in-out"
               style={{ transform: `translateX(-${currentPromo * 100}%)` }}
@@ -214,10 +275,14 @@ const LudoLandingPage = () => {
                   className={`min-w-full p-3 bg-gradient-to-br ${promo.bgColor} text-white relative overflow-hidden`}
                 >
                   <div className="absolute inset-0 bg-black/10"></div>
-                  <div className="absolute top-2 right-2 text-2xl">{promo.icon}</div>
+                  <div className="absolute top-2 right-2 text-2xl">
+                    {promo.icon}
+                  </div>
                   <div className="relative z-10 text-center">
                     <h3 className="text-lg font-bold mb-2">{promo.title}</h3>
-                    <p className="text-white/90 mb-3 text-xs">{promo.subtitle}</p>
+                    <p className="text-white/90 mb-3 text-xs">
+                      {promo.subtitle}
+                    </p>
                     <button className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-black/80 px-3 py-1 rounded-full font-medium transition-all duration-200 hover:scale-105">
                       Claim Now
                     </button>
@@ -232,8 +297,11 @@ const LudoLandingPage = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentPromo(index)}
-                  className={`w-1 h-1 rounded-full transition-all duration-300 ${index === currentPromo ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/70'
-                    }`}
+                  className={`w-1 h-1 rounded-full transition-all duration-300 ${
+                    index === currentPromo
+                      ? "bg-white scale-125"
+                      : "bg-white/50 hover:bg-white/70"
+                  }`}
                 />
               ))}
             </div>
@@ -268,7 +336,9 @@ const LudoLandingPage = () => {
                   <div className="absolute top-4 right-4">
                     <div className="bg-red-500 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
                       <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                      <span className="text-white text-xs font-semibold">LIVE</span>
+                      <span className="text-white text-xs font-semibold">
+                        LIVE
+                      </span>
                     </div>
                   </div>
 
@@ -283,14 +353,16 @@ const LudoLandingPage = () => {
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
                         <Trophy className="h-5 w-5 text-yellow-600" />
-                        <h4 className="text-sm font-bold text-gray-800">{game.contest}</h4>
+                        <h4 className="text-sm font-bold text-gray-800">
+                          {game.contest}
+                        </h4>
                       </div>
                     </div>
 
                     <div className="ml-6">
-                      <button className="bg-black text-white px-3 py-2 rounded-2xl font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-3 group">
+                      <button className="bg-black text-white px-2 p-2 rounded-2xl font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-1 group">
                         <Play className="h-4 w-4 group-hover:scale-110 transition-transform" />
-                        <span className=' text-xs'>Play Now</span>
+                        <span className=" text-xs">Play Now</span>
                       </button>
                     </div>
                   </div>
