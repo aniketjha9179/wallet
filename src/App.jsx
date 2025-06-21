@@ -1,10 +1,11 @@
 import React from 'react'
-import TransactionHistoryPage from './TransactionHistoryPage'
+import LandingPage from './LandingPage'
+import CricketLandingPage from './LandingPage'
 
 
 const App = () => {
   return (
-    <TransactionHistoryPage />
+    <CricketLandingPage />
   )
 }
 
