@@ -32,7 +32,7 @@ const LudoLandingPage = () => {
   const games = [
     {
       id: 1,
-      image: "../public/game IMG_8657.PNG",
+      image: "/game IMG_8657.PNG",
       contest: "Mega Contest",
       prize: "iPhone 16 Pro",
       entry: "₹49",
@@ -43,7 +43,7 @@ const LudoLandingPage = () => {
     },
     {
       id: 2,
-      image: "../public/game IMG_8657.PNG",
+      image: "/game IMG_8657.PNG",
       contest: "Super Contest",
       prize: "Samsung Galaxy S24",
       entry: "₹29",
@@ -54,7 +54,7 @@ const LudoLandingPage = () => {
     },
     {
       id: 3,
-      image: "../public/game IMG_8657.PNG",
+      image: "/game IMG_8657.PNG",
       contest: "Premium Contest",
       prize: "iPad Pro + AirPods",
       entry: "₹99",
@@ -65,7 +65,7 @@ const LudoLandingPage = () => {
     },
     {
       id: 4,
-      image: "../public/game IMG_8657.PNG",
+      image: "/game IMG_8657.PNG",
       contest: "Premium Contest",
       prize: "iPad Pro + AirPods",
       entry: "₹99",
