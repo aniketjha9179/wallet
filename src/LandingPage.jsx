@@ -218,13 +218,10 @@ const LudoLandingPage = () => {
                   Verified
                 </span>
               </div>
-              <div className="bg-red-50 backdrop-blur-sm rounded-md px-2 py-1 flex items-center gap-1 shadow-md">
-                <HiOutlineCurrencyRupee className="h-4 w-4 text-yellow-500" />
-                <span className="text-amber-800 text-sm font-bold">28</span>
-              </div>
+             
               <div className="bg-red-50 backdrop-blur-sm rounded-md px-2 py-1 flex items-center gap-1 shadow-md">
                 <Wallet className="h-4 w-4 text-amber-800" />
-                <span className="text-amber-800 text-sm font-bold">0</span>
+                <span className="text-amber-800 text-sm font-bold">50,000</span>
               </div>
             </div>
           </div>
