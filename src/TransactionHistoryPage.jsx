@@ -1,5 +1,5 @@
 import Logo from '/reapzo.png'
-import TransactionLogo from '/Png logo.png'
+import TransactionLogo from '/IMG_8628.PNG'
 import React, { useState } from "react";
 import { ArrowLeft, Copy, Check, X, CreditCard, TrendingUp, TrendingDown, FileText, AlertCircle, Clock, XCircle, CheckCircle } from "lucide-react";
 
@@ -113,6 +113,13 @@ const TransactionHistoryPage = () => {
     setShowModal(false);
     setSelectedTransaction(null);
     setCopiedFields({});
+  };
+
+  // Handle click outside modal to close it
+  const handleModalBackdropClick = (e) => {
+    if (e.target === e.currentTarget) {
+      closeModal();
+    }
   };
 
   const getStatusColor = (status) => {
@@ -285,7 +292,10 @@ const TransactionHistoryPage = () => {
 
       {/* Enhanced Modal - Mobile Optimized */}
       {showModal && selectedTransaction && (
-        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-end sm:items-center justify-center p-0 sm:p-4">
+        <div 
+          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-end sm:items-center justify-center p-0 sm:p-4"
+          onClick={handleModalBackdropClick}
+        >
           <div className="bg-white rounded-t-3xl sm:rounded-3xl w-full sm:max-w-md sm:w-full max-h-[95vh] flex flex-col shadow-2xl">
             {/* Modal Header */}
             <div className={`${getModalHeaderColor(selectedTransaction.status)} text-gray-800 p-4 rounded-t-3xl flex-shrink-0`}>
