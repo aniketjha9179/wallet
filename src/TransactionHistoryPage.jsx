@@ -302,7 +302,7 @@ const TransactionHistoryPage = () => {
               <div className="flex justify-between items-center mb-3">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                    <div className="w-8 h-8 bg-blue-600 rounded-md flex items-center justify-center">
+                    <div className="w-8 h-8  rounded-md flex items-center justify-center">
                       <img src={TransactionLogo} className="h-6 w-16 object-contain" alt="Transaction Logo" />
                     </div>
                   </div>
