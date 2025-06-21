@@ -3,21 +3,18 @@ import {
   Menu,
   X,
   User,
-  MapPin,
   CreditCard,
   Users,
   Gift,
   Wallet,
   Settings,
-  Shield,
   LogOut,
   Play,
-  Star,
   Trophy,
-  Crown,
   Plus,
   Aperture,
   ShieldCheck,
+  CheckCircle,
 } from "lucide-react";
 import { HiOutlineCurrencyRupee } from "react-icons/hi2";
 import Logo from "/FINAL LOGO jpeg.jpg";
@@ -80,27 +77,27 @@ const LudoLandingPage = () => {
   ];
 
   const menuItems = [
-    { icon: User, label: "My Profile", path: "/profile", color: "text-black" },
+    { icon: User, label: "My Profile", path: "/profile", color: "text-green-600" },
     {
       icon: Aperture,
       label: "My Trips",
       path: "/history",
-      color: "text-black",
+      color: "text-pink-500",
     },
     {
       icon: CreditCard,
       label: "Saved Cards",
       path: "/cards",
-      color: "text-black",
+      color: "text-blue-400",
     },
     {
       icon: Users,
       label: "Saved Travellers",
       path: "/friends",
-      color: "text-black",
+      color: "text-orange-400",
     },
-    { icon: Gift, label: "Hi-Five", path: "/rewards", color: "text-black" },
-    { icon: Wallet, label: "Wallet", path: "/wallet", color: "text-black" },
+    { icon: Gift, label: "Hi-Five", path: "/rewards", color: "text-purple-400" },
+    { icon: Wallet, label: "Wallet", path: "/wallet", color: "text-green-400" },
     {
       icon: Settings,
       label: "Settings",
@@ -111,7 +108,7 @@ const LudoLandingPage = () => {
       icon: ShieldCheck,
       label: "Privacy Rights",
       path: "/privacy",
-      color: "text-black",
+      color: "text-red-600",
     },
   ];
 
@@ -173,9 +170,8 @@ const LudoLandingPage = () => {
 
       {/* Enhanced Curved Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-full w-80 bg-white/95 backdrop-blur-xl shadow-2xl transform transition-all duration-500 ease-out z-50 flex flex-col ${
-          sidebarOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`fixed top-0 left-0 h-full w-80 bg-white/95 backdrop-blur-xl shadow-2xl transform transition-all duration-500 ease-out z-50 flex flex-col ${sidebarOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
         style={{
           borderTopRightRadius: "24px",
           borderBottomRightRadius: "24px",
@@ -184,7 +180,7 @@ const LudoLandingPage = () => {
       >
         {/* Profile Section */}
         <div
-          className="p-6 bg-gray-100 text-black relative overflow-hidden"
+          className="p-6 bg-red-100 text-black relative overflow-hidden"
           style={{ borderTopRightRadius: "24px" }}
         >
           <div className="relative z-10">
@@ -201,23 +197,23 @@ const LudoLandingPage = () => {
             <div className="flex items-center gap-4 mb-6">
               <div>
                 <div className="text-xl text-black font-bold">
-                  +91 8000050810
+                  Sumit Kumar
                 </div>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="bg-gradient-to-r from-yellow-100 to-yellow-300 backdrop-blur-sm rounded-md   px-3 py-2 flex items-center gap-2  border  border-l-amber-400 border-t-amber-300 border-b-amber-400 border-r border-r-white">
-                <Crown className="h-4 w-4 text-yellow-600 -rotate-12" />
-                <span className="text-amber-800 text-sm font-semibold">
-                  LOYAL MEMBER
-                </span>
-              </div>
-              <div className="bg-red-50 backdrop-blur-sm rounded-md px-1 py-2 flex items-center gap-1 shadow-md">
+            <div className="bg-gradient-to-br from-green-50 to-green-200 backdrop-blur-sm rounded-lg px-2 py-1 flex items-center gap-2 shadow-md hover:shadow-lg border border-green-300 hover:scale-105 transition-all duration-300">
+  <CheckCircle className="h-5 w-5 text-green-400" />
+  <span className="text-sm text-green-500 font-bold">
+    Verified
+  </span>
+</div>
+              <div className="bg-red-50 backdrop-blur-sm rounded-md px-2 py-1 flex items-center gap-1 shadow-md">
                 <HiOutlineCurrencyRupee className="h-4 w-4 text-yellow-500" />
                 <span className="text-amber-800 text-sm font-bold">28</span>
               </div>
-              <div className="bg-red-50 backdrop-blur-sm rounded-md px-1 py-2 flex items-center gap-1 shadow-md">
+              <div className="bg-red-50 backdrop-blur-sm rounded-md px-2 py-1 flex items-center gap-1 shadow-md">
                 <Wallet className="h-4 w-4 text-amber-800" />
                 <span className="text-amber-800 text-sm font-bold">0</span>
               </div>
@@ -297,11 +293,10 @@ const LudoLandingPage = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentPromo(index)}
-                  className={`w-1 h-1 rounded-full transition-all duration-300 ${
-                    index === currentPromo
+                  className={`w-1 h-1 rounded-full transition-all duration-300 ${index === currentPromo
                       ? "bg-white scale-125"
                       : "bg-white/50 hover:bg-white/70"
-                  }`}
+                    }`}
                 />
               ))}
             </div>
