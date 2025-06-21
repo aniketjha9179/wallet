@@ -19,10 +19,10 @@ const TransactionHistoryPage = () => {
   ];
 
   const subTabs = [
-    { id: 'all', label: 'All', count: 4 },
-    { id: 'success', label: 'Success', count: 2 },
-    { id: 'in-process', label: 'In Process', count: 1 },
-    { id: 'failed', label: 'Failed', count: 1 }
+    { id: 'all', label: 'All' },
+    { id: 'success', label: 'Success' },
+    { id: 'in-process', label: 'In Process' },
+    { id: 'failed', label: 'Failed' }
   ];
 
   const transactions = [
@@ -30,7 +30,7 @@ const TransactionHistoryPage = () => {
       id: 1,
       type: 'deposit',
       status: 'success',
-      amount: 1000,
+      amount: '1,000',
       date: '2024-06-20',
       time: '14:30',
       upiId: 'user@paytm',
@@ -173,7 +173,7 @@ const TransactionHistoryPage = () => {
   };
 
   const getSubTabStyle = (tab, isActive) => {
-    return `relative px-4 py-3 mx-1 rounded-xl font-medium text-sm transition-all duration-200 touch-manipulation min-h-[48px] flex items-center ${
+    return `relative px-4 py-3 mx-1 rounded-xl font-medium text-sm transition-all duration-200 touch-manipulation min-h-[48px] flex items-center whitespace-nowrap ${
       isActive 
         ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-lg shadow-blue-500/25' 
         : 'text-gray-600 hover:bg-gray-100 hover:text-gray-800'
@@ -219,26 +219,17 @@ const TransactionHistoryPage = () => {
         </div>
       </div>
 
-      {/* Sub Tabs - Mobile Optimized */}
+      {/* Sub Tabs - Mobile Optimized with Fixed Layout */}
       {activeMainTab === 'deposits' && (
         <div className="bg-white/50 backdrop-blur-sm border-b border-gray-200/30">
-          <div className="flex overflow-x-auto scrollbar-hide px-2 py-2 gap-1">
+          <div className="grid grid-cols-4 gap-1 px-2 py-2">
             {subTabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveSubTab(tab.id)}
                 className={getSubTabStyle(tab, activeSubTab === tab.id)}
               >
-                <div className="flex items-center gap-2">
-                  <span className="whitespace-nowrap">{tab.label}</span>
-                  <span className={`px-2 py-1 rounded-full text-xs font-bold ${
-                    activeSubTab === tab.id 
-                      ? 'bg-white/20 text-white' 
-                      : 'bg-gray-200 text-gray-600'
-                  }`}>
-                    {tab.count}
-                  </span>
-                </div>
+                <span className="text-center w-full">{tab.label}</span>
               </button>
             ))}
           </div>
