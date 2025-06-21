@@ -360,12 +360,12 @@ const LudoLandingPage = () => {
                   </div>
 
                   <div className="absolute top-4 right-4">
-                    <div className="bg-red-500 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
-                      <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                      <span className="text-white text-xs font-semibold">
-                        LIVE
-                      </span>
-                    </div>
+                 <div className="bg-gradient-to-b from-red-300 to-red-600 backdrop-blur-sm rounded-full px-2 py-[2px] flex items-center gap-1 shadow-lg shadow-red-500/40 border border-red-400 transform hover:scale-105 transition-transform duration-200">
+  <div className="w-1 h-1 bg-white rounded-full animate-pulse drop-shadow-sm"></div>
+  <span className="text-white text-xs font-semibold drop-shadow-sm italic">
+    LIVE
+  </span>
+</div>
                   </div>
 
                   <div className="absolute bottom-4 left-4 right-4">
