@@ -34,34 +34,19 @@ const LudoLandingPage = () => {
       id: 1,
       image: "/game IMG_8657.PNG",
       contest: "Mega Contest",
-      prize: "iPhone 16 Pro",
-      entry: "₹49",
-      players: "1,247",
-      timeLeft: "2h 15m",
-      difficulty: "Medium",
-      winRate: "78%"
+  
     },
     {
       id: 2,
       image: "/game IMG_8657.PNG",
       contest: "Super Contest",
-      prize: "Samsung Galaxy S24",
-      entry: "₹29",
-      players: "2,851",
-      timeLeft: "45m",
-      difficulty: "Easy",
-      winRate: "85%"
+   
     },
     {
       id: 3,
       image: "/game IMG_8657.PNG",
       contest: "Premium Contest",
-      prize: "iPad Pro + AirPods",
-      entry: "₹99",
-      players: "756",
-      timeLeft: "6h 30m",
-      difficulty: "Hard",
-      winRate: "65%"
+     
     },
     {
       id: 4,
@@ -87,11 +72,7 @@ const LudoLandingPage = () => {
     { icon: Shield, label: "Privacy & Security", path: "/privacy", color: "text-red-600" }
   ];
 
-  const achievements = [
-    { icon: "🏆", label: "Winner", count: 156 },
-    { icon: "⚡", label: "Speed Games", count: 89 },
-    { icon: "👑", label: "Tournaments", count: 23 }
-  ];
+
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -104,14 +85,7 @@ const LudoLandingPage = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
-  const getDifficultyColor = (difficulty) => {
-    switch (difficulty) {
-      case 'Easy': return 'bg-green-100 text-green-800';
-      case 'Medium': return 'bg-yellow-100 text-yellow-800';
-      case 'Hard': return 'bg-red-100 text-red-800';
-      default: return 'bg-gray-100 text-gray-800';
-    }
-  };
+ 
 
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
@@ -229,7 +203,7 @@ const LudoLandingPage = () => {
       <main className="p-4 pb-24 relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Enhanced Promotion Cards */}
-         <div className="mb-8 relative overflow-hidden rounded-3xl shadow-2xl w-full max-w-[600px] mx-auto">
+         <div className="mb-8 relative overflow-hidden rounded-3xl shadow-2xl w-full max-w-[500px] mx-auto">
             <div
               className="flex transition-transform duration-700 ease-in-out"
               style={{ transform: `translateX(-${currentPromo * 100}%)` }}
@@ -237,14 +211,14 @@ const LudoLandingPage = () => {
               {promoCards.map((promo) => (
                 <div
                   key={promo.id}
-                  className={`min-w-full p-8 bg-gradient-to-br ${promo.bgColor} text-white relative overflow-hidden`}
+                  className={`min-w-full p-3 bg-gradient-to-br ${promo.bgColor} text-white relative overflow-hidden`}
                 >
                   <div className="absolute inset-0 bg-black/10"></div>
-                  <div className="absolute top-4 right-4 text-4xl">{promo.icon}</div>
+                  <div className="absolute top-2 right-2 text-2xl">{promo.icon}</div>
                   <div className="relative z-10 text-center">
-                    <h3 className="text-2xl font-bold mb-2">{promo.title}</h3>
-                    <p className="text-white/90 mb-4 text-xs">{promo.subtitle}</p>
-                    <button className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-black/80 px-6 py-2 rounded-full font-semibold transition-all duration-200 hover:scale-105">
+                    <h3 className="text-lg font-bold mb-2">{promo.title}</h3>
+                    <p className="text-white/90 mb-3 text-xs">{promo.subtitle}</p>
+                    <button className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-black/80 px-3 py-1 rounded-full font-medium transition-all duration-200 hover:scale-105">
                       Claim Now
                     </button>
                   </div>
@@ -253,12 +227,12 @@ const LudoLandingPage = () => {
             </div>
 
             {/* Enhanced Dots indicator */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3">
+            <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 flex space-x-3">
               {promoCards.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentPromo(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentPromo ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/70'
+                  className={`w-1 h-1 rounded-full transition-all duration-300 ${index === currentPromo ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/70'
                     }`}
                 />
               ))}
@@ -274,10 +248,10 @@ const LudoLandingPage = () => {
             {games.map((game, index) => (
               <div
                 key={game.id}
-                className="w-full max-w-[600px] bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 group"
+                className="w-full max-w-[500px] bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 group"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-40 overflow-hidden">
                   <img
                     src={game.image}
                     alt={`${game.gameType} game`}
@@ -292,7 +266,7 @@ const LudoLandingPage = () => {
                   </div>
 
                   <div className="absolute top-4 right-4">
-                    <div className="bg-green-500/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
+                    <div className="bg-red-500 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
                       <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                       <span className="text-white text-xs font-semibold">LIVE</span>
                     </div>
@@ -304,19 +278,19 @@ const LudoLandingPage = () => {
                 </div>
 
                 {/* Enhanced Contest Info */}
-                <div className="p-3 bg-gradient-to-br from-gray-50 to-white">
+                <div className="p-2 bg-gradient-to-br from-gray-50 to-white">
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
                         <Trophy className="h-5 w-5 text-yellow-600" />
-                        <h4 className="text-lg font-bold text-gray-800">{game.contest}</h4>
+                        <h4 className="text-sm font-bold text-gray-800">{game.contest}</h4>
                       </div>
                     </div>
 
                     <div className="ml-6">
-                      <button className="bg-black text-white px-5 py-3 rounded-2xl font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-3 group">
-                        <Play className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                        <span>Play Now</span>
+                      <button className="bg-black text-white px-3 py-2 rounded-2xl font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-3 group">
+                        <Play className="h-4 w-4 group-hover:scale-110 transition-transform" />
+                        <span className=' text-xs'>Play Now</span>
                       </button>
                     </div>
                   </div>
