@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+
 import {
   Menu,
   X,
@@ -16,12 +18,12 @@ import {
   ShieldCheck,
   CheckCircle,
 } from "lucide-react";
-import { HiOutlineCurrencyRupee } from "react-icons/hi2";
 import Logo from "/FINAL LOGO jpeg.jpg";
 
 const LudoLandingPage = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [currentPromo, setCurrentPromo] = useState(0);
+  const [isShining, setIsShining] = useState(false);
 
   const promoCards = [
     {
@@ -133,6 +135,26 @@ const LudoLandingPage = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
+  const controls = useAnimation();
+
+  useEffect(() => {
+    const startShining = async () => {
+      while (true) {
+        // Reset position
+        await controls.set({ x: "-120%", skewX: -12 });
+        // Wait 3 seconds
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+        // Animate from left to right
+        await controls.start({
+          x: "200%",
+          transition: { duration: 0.8, ease: "easeOut" },
+        });
+      }
+    };
+
+    startShining();
+  }, [controls]);
+
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
       {/* Animated Background Elements */}
@@ -159,13 +181,15 @@ const LudoLandingPage = () => {
             </div>
           </div>
           <div className="flex items-center gap-1 ">
-          <div className="bg-gradient-to-r from-green-400/10 to-green-500/20 backdrop-blur-md rounded-full px-2 py-2 flex items-center gap-2 shadow-[0_0_10px_rgba(34,197,94,0.15)] hover:shadow-[0_0_15px_rgba(34,197,94,0.25)] border border-green-300/50 hover:scale-105 hover:-translate-y-1 transition-all duration-400 hover:bg-gradient-to-r hover:from-green-500/20 hover:to-green-600/30">
-  <Wallet className="h-3 w-3 text-green-600 filter drop-shadow-[0_0_2px_rgba(34,197,94,0.4)]" />
-  <span className="text-black text-xs font-bold filter drop-shadow-[0_0_1px_rgba(34,197,94,0.3)]">₹2,450</span>
-  <button className="bg-green-500 hover:bg-green-600 rounded-full p-1 transition-all duration-200 hover:scale-125 shadow-[0_0_5px_rgba(34,197,94,0.3)] hover:shadow-[0_0_8px_rgba(34,197,94,0.4)]">
-    <Plus className="h-3 w-3 text-white" />
-  </button>
-</div>
+            <div className="bg-gradient-to-r from-green-400/10 to-green-500/20 backdrop-blur-md rounded-full px-2 py-2 flex items-center gap-2 shadow-[0_0_10px_rgba(34,197,94,0.15)] hover:shadow-[0_0_15px_rgba(34,197,94,0.25)] border border-green-300/50 hover:scale-105 hover:-translate-y-1 transition-all duration-400 hover:bg-gradient-to-r hover:from-green-500/20 hover:to-green-600/30">
+              <Wallet className="h-3 w-3 text-green-600 filter drop-shadow-[0_0_2px_rgba(34,197,94,0.4)]" />
+              <span className="text-black text-xs font-bold filter drop-shadow-[0_0_1px_rgba(34,197,94,0.3)]">
+                ₹2,450
+              </span>
+              <button className="bg-green-500 hover:bg-green-600 rounded-full p-1 transition-all duration-200 hover:scale-125 shadow-[0_0_5px_rgba(34,197,94,0.3)] hover:shadow-[0_0_8px_rgba(34,197,94,0.4)]">
+                <Plus className="h-3 w-3 text-white" />
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -218,7 +242,7 @@ const LudoLandingPage = () => {
                   Verified
                 </span>
               </div>
-             
+
               <div className="bg-red-50 backdrop-blur-sm rounded-md px-2 py-1 flex items-center gap-1 shadow-md">
                 <Wallet className="h-4 w-4 text-amber-800" />
                 <span className="text-amber-800 text-sm font-bold">50,000</span>
@@ -362,10 +386,16 @@ const LudoLandingPage = () => {
                     </div>
 
                     <div className="ml-6">
-                      <button className="bg-black text-white px-2 p-2 rounded-2xl font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-1 group">
-                        <Play className="h-4 w-4 group-hover:scale-110 transition-transform" />
-                        <span className=" text-xs">Play Now</span>
-                      </button>
+                     <button className="bg-gradient-to-b from-gray-800 to-black/80 text-white px-4 p-2 rounded-2xl font-medium shadow-[0_6px_20px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1),inset_0_-1px_0_rgba(0,0,0,0.5)] hover:shadow-[0_8px_25px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.2),inset_0_-1px_0_rgba(0,0,0,0.6)] transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 flex items-center gap-1 group relative overflow-hidden border border-gray-700/50">
+  {/* Framer Motion Shining effect */}
+  <motion.div
+    animate={controls}
+    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent"
+    style={{ skewX: -12 }}
+  />
+  
+  <span className="text-xs relative z-10">Play Now</span>
+</button>
                     </div>
                   </div>
                 </div>
