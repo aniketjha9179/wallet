@@ -85,7 +85,11 @@ const ReferralPage = () => {
                     <span className="text-xl sm:text-2xl">⚡</span>
                 </div>
 
+<<<<<<< HEAD
                 <h2 className="text-4xl sm:text-6xl  md:text-9xl font-bold text-yellow-400 mb-4 sm:mb-6" style={{ textShadow: '2px 2px 2px rgba(255, 172, 28)' }}>
+=======
+                <h2 className="text-5xl sm:text-10xl font-bold text-yellow-400 mb-4 sm:mb-6" style={{ textShadow: '2px 2px 2px rgba(255, 172, 28)' }}>
+>>>>>>> 2aa16ee0ec6a58dcb5e0cf17440b02ad5ee97246
                     10 Invite = ₹500
                 </h2>
             </div>
