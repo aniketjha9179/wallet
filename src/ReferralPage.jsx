@@ -85,7 +85,7 @@ const ReferralPage = () => {
                     <span className="text-xl sm:text-2xl">⚡</span>
                 </div>
 
-                <h2 className="text-3xl sm:text-6xl font-bold text-yellow-400 mb-4 sm:mb-6" style={{ textShadow: '2px 2px 2px rgba(255, 172, 28)' }}>
+                <h2 className="text-4xl sm:text-6xl  md:text-9xl font-bold text-yellow-400 mb-4 sm:mb-6" style={{ textShadow: '2px 2px 2px rgba(255, 172, 28)' }}>
                     10 Invite = ₹500
                 </h2>
             </div>
@@ -182,7 +182,7 @@ const ReferralPage = () => {
                     </div>
                     <button
                         onClick={copyReferralCode}
-                        className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 border border-black/40 rounded-full flex items-center gap-2 transition-colors"
+                        className="bg-gray-100 hover:bg-gray-200 text-gray-600 font-bold px-3 py-1 border border-black/40 rounded-full flex items-center gap-2 transition-colors"
                     >
                         <Copy size={14} />
                         Copy
@@ -192,7 +192,7 @@ const ReferralPage = () => {
 
             {/* Refer & Earn Button */}
             <div className="  mb-10">
-               <button className="w-full text-center  bg-yellow-500 text-black px-4 p-2 rounded-lg font-medium shadow-[0_8px_15px_rgba(0,0,0,0.2),0_4px_6px_rgba(0,0,0,0.1),inset_0_2px_4px_rgba(255,255,255,0.6),inset_0_-2px_4px_rgba(0,0,0,0.1),inset_0_0_0_1px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_25px_rgba(0,0,0,0.25),0_6px_10px_rgba(0,0,0,0.15),inset_0_3px_6px_rgba(255,255,255,0.7),inset_0_-3px_6px_rgba(0,0,0,0.15),inset_0_0_0_1px_rgba(255,255,255,0.4)] transform hover:scale-[1.02] hover:-translate-y-1 active:scale-[0.98] active:translate-y-0 active:shadow-[0_4px_8px_rgba(0,0,0,0.2),inset_0_1px_2px_rgba(255,255,255,0.4),inset_0_-1px_2px_rgba(0,0,0,0.2)] transition-all duration-200 flex items-center justify-center gap-1 group relative overflow-hidden border-b-4 border-yellow-600 before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-b before:from-white/20 before:to-transparent before:pointer-events-none">
+               <button className="w-full text-center    bg-yellow-500 text-black px-4 p-3 rounded-lg font-medium shadow-[0_8px_15px_rgba(0,0,0,0.2),0_4px_6px_rgba(0,0,0,0.1),inset_0_2px_4px_rgba(255,255,255,0.6),inset_0_-2px_4px_rgba(0,0,0,0.1),inset_0_0_0_1px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_25px_rgba(0,0,0,0.25),0_6px_10px_rgba(0,0,0,0.15),inset_0_3px_6px_rgba(255,255,255,0.7),inset_0_-3px_6px_rgba(0,0,0,0.15),inset_0_0_0_1px_rgba(255,255,255,0.4)] transform hover:scale-[1.02] hover:-translate-y-1 active:scale-[0.98] active:translate-y-0 active:shadow-[0_4px_8px_rgba(0,0,0,0.2),inset_0_1px_2px_rgba(255,255,255,0.4),inset_0_-1px_2px_rgba(0,0,0,0.2)] transition-all duration-200 flex items-center justify-center gap-1 group relative overflow-hidden border-b-4 border-yellow-600 before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-b before:from-white/20 before:to-transparent before:pointer-events-none">
     {/* Framer Motion Shining effect */}
     <motion.div
         animate={controls}
@@ -200,7 +200,7 @@ const ReferralPage = () => {
         style={{ skewX: -12 }}
     />
 
-    <span className="text-xs relative z-10 font-bold drop-shadow-sm">
+    <span className="text-[18px] relative z-10 font-bold drop-shadow-sm">
         Refer & Earn ₹50 Instantly
     </span>
 </button>
@@ -208,7 +208,7 @@ const ReferralPage = () => {
 
             {/* How it works - Clickable */}
             <div className="text-center cursor-pointer" onClick={openModal}>
-                <div className="text-gray-600 font-semibold border-b-2 border-dashed border-gray-600 pb-1 inline-block">
+                <div className="text-gray-600 font-semibold border-b-1 border-dashed border-gray-600 pb-1 inline-block">
                     How it works ?
                 </div>
                 <div className="flex justify-center mt-2">
