@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Copy, X, Lightbulb } from 'lucide-react';
 import MoneyImage from '/money image.png'
-import { useAnimation,motion } from "framer-motion";
+import { useAnimation, motion } from "framer-motion";
 
 const ReferralPage = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
- 
+
 
     const topInviterData = [
         {
@@ -81,11 +81,11 @@ const ReferralPage = () => {
             <div className="text-center mb-6 sm:mb-8">
                 <div className="flex items-center justify-center gap-2 mb-4">
                     <span className="text-xl sm:text-2xl">⚡</span>
-                    <h1 className="text-base sm:text-lg font-bold text-orange-800">INSTANT BONUS</h1>
+                    <h1 className="text-base sm:text-lg font-bold text-yellow-400" style={{ textShadow: '1px 1px 1px rgba(255, 172, 28)' }}>INSTANT BONUS</h1>
                     <span className="text-xl sm:text-2xl">⚡</span>
                 </div>
 
-                <h2 className="text-3xl sm:text-4xl font-bold text-orange-600 mb-4 sm:mb-6">
+                <h2 className="text-3xl sm:text-4xl font-bold text-yellow-400 mb-4 sm:mb-6" style={{ textShadow: '1px 1px 1px rgba(255, 172, 28)/10' }}>
                     10 Invite = ₹500
                 </h2>
             </div>
@@ -163,28 +163,28 @@ const ReferralPage = () => {
             </div>
 
             {/* Current Earnings */}
-            <div className="bg-white rounded-2xl shadow-lg p-4 mb-6">
+            <div className="bg-white rounded-2xl shadow-lg p-3 mb-6">
                 <div className="flex items-center gap-3">
                     <div className="text-2xl">💰</div>
                     <div>
-                        <div className="text-gray-600 text-sm">Current earnings:</div>
-                        <div className="text-xl font-bold text-gray-800">₹0</div>
+                        <div className="text-gray-600 text-sm">Current earnings: <span className=' text-black/90  font-bold'>₹0</span></div>
+
                     </div>
                 </div>
             </div>
 
             {/* Referral Code */}
-            <div className="bg-white rounded-2xl shadow-lg p-4 mb-6">
+            <div className="bg-white rounded-xl shadow-lg p-4 mb-6">
                 <div className="flex justify-between items-center">
                     <div>
-                        <div className="text-gray-500 text-sm mb-1">REFERRAL CODE</div>
-                        <div className="text-2xl font-bold text-gray-800">XW0QZP</div>
+                        <div className="text-gray-500 text-xs mb-1">REFERRAL CODE</div>
+                        <div className="text-lg font-bold text-gray-800">XW0QZP</div>
                     </div>
                     <button
                         onClick={copyReferralCode}
                         className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg flex items-center gap-2 transition-colors"
                     >
-                        <Copy size={16} />
+                        <Copy size={14} />
                         Copy
                     </button>
                 </div>
@@ -192,7 +192,7 @@ const ReferralPage = () => {
 
             {/* Refer & Earn Button */}
             <div className=" ml-10 mr-10 mb-10">
-                <button className="w-full text-center bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 text-black px-4 p-2 rounded-lg font-medium shadow-[0_8px_15px_rgba(0,0,0,0.2),0_4px_6px_rgba(0,0,0,0.1),inset_0_2px_4px_rgba(255,255,255,0.6),inset_0_-2px_4px_rgba(0,0,0,0.1),inset_0_0_0_1px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_25px_rgba(0,0,0,0.25),0_6px_10px_rgba(0,0,0,0.15),inset_0_3px_6px_rgba(255,255,255,0.7),inset_0_-3px_6px_rgba(0,0,0,0.15),inset_0_0_0_1px_rgba(255,255,255,0.4)] transform hover:scale-[1.02] hover:-translate-y-1 active:scale-[0.98] active:translate-y-0 active:shadow-[0_4px_8px_rgba(0,0,0,0.2),inset_0_1px_2px_rgba(255,255,255,0.4),inset_0_-1px_2px_rgba(0,0,0,0.2)] transition-all duration-200 flex items-center justify-center gap-1 group relative overflow-hidden border-2 border-yellow-500/30 before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-b before:from-white/20 before:to-transparent before:pointer-events-none">
+               <button className="w-full text-center bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 text-black px-4 p-2 rounded-lg font-medium shadow-[0_8px_15px_rgba(0,0,0,0.2),0_4px_6px_rgba(0,0,0,0.1),inset_0_2px_4px_rgba(255,255,255,0.6),inset_0_-2px_4px_rgba(0,0,0,0.1),inset_0_0_0_1px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_25px_rgba(0,0,0,0.25),0_6px_10px_rgba(0,0,0,0.15),inset_0_3px_6px_rgba(255,255,255,0.7),inset_0_-3px_6px_rgba(0,0,0,0.15),inset_0_0_0_1px_rgba(255,255,255,0.4)] transform hover:scale-[1.02] hover:-translate-y-1 active:scale-[0.98] active:translate-y-0 active:shadow-[0_4px_8px_rgba(0,0,0,0.2),inset_0_1px_2px_rgba(255,255,255,0.4),inset_0_-1px_2px_rgba(0,0,0,0.2)] transition-all duration-200 flex items-center justify-center gap-1 group relative overflow-hidden border-b-4 border-yellow-600 before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-b before:from-white/20 before:to-transparent before:pointer-events-none">
     {/* Framer Motion Shining effect */}
     <motion.div
         animate={controls}
@@ -208,18 +208,18 @@ const ReferralPage = () => {
 
             {/* How it works - Clickable */}
             <div className="text-center cursor-pointer" onClick={openModal}>
-    <div className="text-gray-600 font-semibold border-b-2 border-dashed border-gray-600 pb-1 inline-block">
-        How it works ?
-    </div>
-    <div className="flex justify-center mt-2">
-        <div className="w-12 h-1 bg-gray-300 rounded"></div>
-    </div>
-</div>
+                <div className="text-gray-600 font-semibold border-b-2 border-dashed border-gray-600 pb-1 inline-block">
+                    How it works ?
+                </div>
+                <div className="flex justify-center mt-2">
+                    <div className="w-12 h-1 bg-gray-300 rounded"></div>
+                </div>
+            </div>
 
             {/* Modal */}
             {isModalOpen && (
                 <div
-                    className="fixed inset-0 bg-black bg-opacity-50 flex items-end justify-center z-50"
+                    className="fixed inset-0 bg-black/80 bg-opacity-50 flex items-end justify-center z-50"
                     onClick={handleBackdropClick}
                 >
                     <div className="bg-white w-full max-w-md rounded-t-3xl p-6 animate-slide-up">
@@ -243,12 +243,13 @@ const ReferralPage = () => {
                         </div>
 
                         {/* Step 1 */}
+                        {/* Step 1 */}
                         <div className="flex items-start gap-4 mb-6">
                             <div className="flex flex-col items-center">
-                                <div className="w-4 h-4 bg-orange-500 text-white rounded-full flex items-center justify-center text-xs font-bold mb-2">
+                                <div className="w-4 h-4 bg-yellow-400 text-white rounded-full flex items-center justify-center text-xs font-bold mb-2">
 
                                 </div>
-                                <div className="w-0.5 h-16 bg-gray-200"></div>
+                                <div className="w-0.5 h-20 bg-gray-300"></div>
                             </div>
                             <div className="flex-1">
                                 <div className="text-orange-600 font-semibold text-sm mb-2">STEP 1</div>
@@ -267,10 +268,10 @@ const ReferralPage = () => {
                         {/* Step 2 */}
                         <div className="flex items-start gap-4 mb-6">
                             <div className="flex flex-col items-center">
-                                <div className="w-4 h-4 bg-orange-500 text-white rounded-full flex items-center justify-center text-xs font-bold mb-2">
+                                <div className="w-4 h-4 bg-yellow-400 text-white rounded-full flex items-center justify-center text-xs font-bold mb-2">
 
                                 </div>
-                                <div className="w-0.5 h-16 bg-gray-200"></div>
+                                <div className="w-0.5 h-20 bg-gray-300"></div>
                             </div>
                             <div className="flex-1">
                                 <div className="text-orange-600 font-semibold text-sm mb-2">STEP 2</div>
@@ -279,9 +280,12 @@ const ReferralPage = () => {
                                     You can also remind your friend by tapping on bell icon
                                 </p>
                             </div>
-                            <div className="flex-shrink-0 flex items-center gap-2">
-                                <button className="bg-blue-500 text-white px-3 py-1 rounded text-sm">
+                            <div className="flex-shrink-0 flex flex-col items-center gap-2 ">
+                                <button className="bg-blue-500 text-white px-3 py-1  rounded text-sm">
                                     Yes 5.5
+                                </button>
+                                <button className="bg-yellow-500 text-white px-2 py-1 rounded text-sm -ml-4 ">
+                                    No 4.5
                                 </button>
                             </div>
                         </div>
@@ -289,7 +293,7 @@ const ReferralPage = () => {
                         {/* Step 3 */}
                         <div className="flex items-start gap-4">
                             <div className="flex flex-col items-center">
-                                <div className="w-4 h-4 bg-orange-500 text-white rounded-full flex items-center justify-center text-xs font-bold">
+                                <div className="w-4 h-4 bg-yellow-400 text-white rounded-full flex items-center justify-center text-xs font-bold">
 
                                 </div>
                             </div>
