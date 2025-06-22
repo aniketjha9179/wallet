@@ -35,7 +35,7 @@ const ReferralPage = () => {
     ];
 
     const copyReferralCode = () => {
-        navigator.clipboard.writeText('XW0QZP');
+        navigator.clipboard.writeText('REA8KD2M');
         alert('Referral code copied!');
     };
 
@@ -85,7 +85,7 @@ const ReferralPage = () => {
                     <span className="text-xl sm:text-2xl">⚡</span>
                 </div>
 
-                <h2 className="text-3xl sm:text-4xl font-bold text-yellow-400 mb-4 sm:mb-6" style={{ textShadow: '1px 1px 1px rgba(255, 172, 28)/10' }}>
+                <h2 className="text-3xl sm:text-6xl font-bold text-yellow-400 mb-4 sm:mb-6" style={{ textShadow: '2px 2px 2px rgba(255, 172, 28)' }}>
                     10 Invite = ₹500
                 </h2>
             </div>
@@ -96,7 +96,7 @@ const ReferralPage = () => {
                     <img
                         src={MoneyImage}
                         alt="Money and earnings"
-                        className="w-[280px] h-[200px] sm:w-[400px] sm:h-[300px]  -mb-28 z-0 "
+                        className="w-[400px] h-[260px] sm:w-[600px] sm:h-[350px]  -mb-28 z-0 "
                     />
                 </div>
             </div>
@@ -112,7 +112,7 @@ const ReferralPage = () => {
                             <img
                                 src={topInviterData[0].avatar}
                                 alt={topInviterData[0].name}
-                                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-3 border-yellow-400"
+                                className="w-16 h-16 sm:w-18 sm:h-18 rounded-full border-3 border-yellow-400"
                             />
                             <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">
                                 2
@@ -130,7 +130,7 @@ const ReferralPage = () => {
                             <img
                                 src={topInviterData[1].avatar}
                                 alt={topInviterData[1].name}
-                                className="w-16 h-16 sm:w-18 sm:h-18 rounded-full border-4 border-yellow-500"
+                                className="w-20 h-20 sm:w-22 sm:h-22 rounded-full border-4 border-yellow-500"
                             />
                             <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">
                                 1
@@ -148,7 +148,7 @@ const ReferralPage = () => {
                             <img
                                 src={topInviterData[2].avatar}
                                 alt={topInviterData[2].name}
-                                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-3 border-yellow-400"
+                                className="w-16 h-16 sm:w-18 sm:h-18 rounded-full border-3 border-yellow-400"
                             />
                             <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">
                                 3
@@ -163,26 +163,26 @@ const ReferralPage = () => {
             </div>
 
             {/* Current Earnings */}
-            <div className="bg-white rounded-2xl shadow-lg p-3 mb-6">
+            <div className="bg-orange-50 rounded-2xl shadow-lg p-3 mb-6">
                 <div className="flex items-center gap-3">
                     <div className="text-2xl">💰</div>
                     <div>
-                        <div className="text-gray-600 text-sm">Current earnings: <span className=' text-black/90  font-bold'>₹0</span></div>
+                        <div className="text-gray-600 text-sm">Current earnings: <span className=' text-black/90  font-bold'>₹ 12,470</span></div>
 
                     </div>
                 </div>
             </div>
 
             {/* Referral Code */}
-            <div className="bg-white rounded-xl shadow-lg p-4 mb-6">
+            <div className="bg-white rounded-xl shadow-lg p-3 mb-6">
                 <div className="flex justify-between items-center">
                     <div>
-                        <div className="text-gray-500 text-xs mb-1">REFERRAL CODE</div>
-                        <div className="text-lg font-bold text-gray-800">XW0QZP</div>
+                        <div className="text-gray-700 text-[10px] mb-1">REFERRAL CODE</div>
+                        <div className="text-sm font-bold text-gray-800">REA8KD2M </div>
                     </div>
                     <button
                         onClick={copyReferralCode}
-                        className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg flex items-center gap-2 transition-colors"
+                        className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 border border-black/40 rounded-full flex items-center gap-2 transition-colors"
                     >
                         <Copy size={14} />
                         Copy
@@ -191,8 +191,8 @@ const ReferralPage = () => {
             </div>
 
             {/* Refer & Earn Button */}
-            <div className=" ml-10 mr-10 mb-10">
-               <button className="w-full text-center bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 text-black px-4 p-2 rounded-lg font-medium shadow-[0_8px_15px_rgba(0,0,0,0.2),0_4px_6px_rgba(0,0,0,0.1),inset_0_2px_4px_rgba(255,255,255,0.6),inset_0_-2px_4px_rgba(0,0,0,0.1),inset_0_0_0_1px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_25px_rgba(0,0,0,0.25),0_6px_10px_rgba(0,0,0,0.15),inset_0_3px_6px_rgba(255,255,255,0.7),inset_0_-3px_6px_rgba(0,0,0,0.15),inset_0_0_0_1px_rgba(255,255,255,0.4)] transform hover:scale-[1.02] hover:-translate-y-1 active:scale-[0.98] active:translate-y-0 active:shadow-[0_4px_8px_rgba(0,0,0,0.2),inset_0_1px_2px_rgba(255,255,255,0.4),inset_0_-1px_2px_rgba(0,0,0,0.2)] transition-all duration-200 flex items-center justify-center gap-1 group relative overflow-hidden border-b-4 border-yellow-600 before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-b before:from-white/20 before:to-transparent before:pointer-events-none">
+            <div className="  mb-10">
+               <button className="w-full text-center  bg-yellow-500 text-black px-4 p-2 rounded-lg font-medium shadow-[0_8px_15px_rgba(0,0,0,0.2),0_4px_6px_rgba(0,0,0,0.1),inset_0_2px_4px_rgba(255,255,255,0.6),inset_0_-2px_4px_rgba(0,0,0,0.1),inset_0_0_0_1px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_25px_rgba(0,0,0,0.25),0_6px_10px_rgba(0,0,0,0.15),inset_0_3px_6px_rgba(255,255,255,0.7),inset_0_-3px_6px_rgba(0,0,0,0.15),inset_0_0_0_1px_rgba(255,255,255,0.4)] transform hover:scale-[1.02] hover:-translate-y-1 active:scale-[0.98] active:translate-y-0 active:shadow-[0_4px_8px_rgba(0,0,0,0.2),inset_0_1px_2px_rgba(255,255,255,0.4),inset_0_-1px_2px_rgba(0,0,0,0.2)] transition-all duration-200 flex items-center justify-center gap-1 group relative overflow-hidden border-b-4 border-yellow-600 before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-b before:from-white/20 before:to-transparent before:pointer-events-none">
     {/* Framer Motion Shining effect */}
     <motion.div
         animate={controls}
