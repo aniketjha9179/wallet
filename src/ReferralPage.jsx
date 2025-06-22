@@ -225,7 +225,7 @@ const ReferralPage = () => {
             style={{ skewX: -12 }}
           />
 
-          <span className="text-[18px] relative z-10 font-bold drop-shadow-sm">
+          <span className="text-[18px] relative text-black/70 z-10 font-bold drop-shadow-sm">
             Refer & Earn ₹50 Instantly
           </span>
         </button>
