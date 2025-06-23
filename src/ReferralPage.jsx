@@ -5,7 +5,8 @@ import { useAnimation, motion } from "framer-motion";
 
 const ReferralPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentText, setCurrentText] = useState("2 Invite = ₹100");
+  const [currentInvites, setCurrentInvites] = useState("2");
+  const [currentAmount, setCurrentAmount] = useState("100");
 
   const topInviterData = [
     {
@@ -58,9 +59,10 @@ const ReferralPage = () => {
   };
 
   const controls = useAnimation();
-  const textControls = useAnimation();
-  const moneyImageControls = useAnimation(); // New animation control for money image
-  const textShineControls = useAnimation(); // New animation control for text shine effect
+  const inviteNumberControls = useAnimation();
+  const amountNumberControls = useAnimation();
+  const moneyImageControls = useAnimation();
+  const textShineControls = useAnimation();
 
   useEffect(() => {
     const startShining = async () => {
@@ -102,37 +104,59 @@ const ReferralPage = () => {
   }, [textShineControls]);
 
   useEffect(() => {
-    const animateText = async () => {
-      // Initial animation - slide up from bottom
-      await textControls.start({
-        y: 0,
-        opacity: 1,
-        transition: { duration: 0.8, ease: "easeOut" }
-      });
+    const animateNumbers = async () => {
+      // Initial animation - slide up from bottom for both numbers
+      await Promise.all([
+        inviteNumberControls.start({
+          y: 0,
+          opacity: 1,
+          transition: { duration: 0.8, ease: "easeOut" }
+        }),
+        amountNumberControls.start({
+          y: 0,
+          opacity: 1,
+          transition: { duration: 0.8, ease: "easeOut" }
+        })
+      ]);
       
       // Wait for 2 seconds
       await new Promise((resolve) => setTimeout(resolve, 2000));
       
-      // Slide down and change text
-      await textControls.start({
-        y: 50,
-        opacity: 0,
-        transition: { duration: 0.4, ease: "easeIn" }
-      });
+      // Slide down both numbers
+      await Promise.all([
+        inviteNumberControls.start({
+          y: 50,
+          opacity: 0,
+          transition: { duration: 0.4, ease: "easeIn" }
+        }),
+        amountNumberControls.start({
+          y: 50,
+          opacity: 0,
+          transition: { duration: 0.4, ease: "easeIn" }
+        })
+      ]);
       
-      // Change text
-      setCurrentText("10 Invite = ₹500");
+      // Change numbers
+      setCurrentInvites("10");
+      setCurrentAmount("500");
       
-      // Slide up with new text
-      await textControls.start({
-        y: 0,
-        opacity: 1,
-        transition: { duration: 0.6, ease: "easeOut" }
-      });
+      // Slide up with new numbers
+      await Promise.all([
+        inviteNumberControls.start({
+          y: 0,
+          opacity: 1,
+          transition: { duration: 0.6, ease: "easeOut" }
+        }),
+        amountNumberControls.start({
+          y: 0,
+          opacity: 1,
+          transition: { duration: 0.6, ease: "easeOut" }
+        })
+      ]);
     };
 
-    animateText();
-  }, [textControls]);
+    animateNumbers();
+  }, [inviteNumberControls, amountNumberControls]);
 
   // Money image animation effect on page load
   useEffect(() => {
@@ -207,14 +231,10 @@ const ReferralPage = () => {
         </div>
 
         <h2
-          className="text-4xl sm:text-6xl  md:text-9xl font-bold text-yellow-400 mb-4 sm:mb-6 relative overflow-hidden"
+          className="text-4xl sm:text-6xl md:text-9xl font-bold text-yellow-400 mb-4 sm:mb-6 relative overflow-hidden"
           style={{ textShadow: "2px 2px 2px rgba(255, 172, 28)" }}
         >
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            animate={textControls}
-            className="relative inline-block"
-          >
+          <div className="relative inline-block">
             {/* Framer Motion Shining effect for text */}
             <motion.div
               animate={textShineControls}
@@ -225,8 +245,24 @@ const ReferralPage = () => {
                 height: '100%'
               }}
             />
-            <span className="relative z-10">{currentText}</span>
-          </motion.div>
+            <span className="relative z-10">
+              <motion.span
+                initial={{ y: 100, opacity: 0 }}
+                animate={inviteNumberControls}
+                className="inline-block"
+              >
+                {currentInvites}
+              </motion.span>
+              {" "}Invite = ₹
+              <motion.span
+                initial={{ y: 100, opacity: 0 }}
+                animate={amountNumberControls}
+                className="inline-block"
+              >
+                {currentAmount}
+              </motion.span>
+            </span>
+          </div>
         </h2>
       </div>
 
