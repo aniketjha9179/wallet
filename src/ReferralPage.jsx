@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Copy, X, Lightbulb } from "lucide-react";
+import { Copy, X, Lightbulb, Wallet } from "lucide-react";
 import MoneyImage from "/money image.png";
 import { useAnimation, motion } from "framer-motion";
 
@@ -359,7 +359,9 @@ const ReferralPage = () => {
       {/* Current Earnings */}
       <div className="bg-orange-50 rounded-2xl shadow-lg p-3 mb-6">
         <div className="flex items-center gap-3">
-          <div className="text-2xl">💰</div>
+          <div className="text-2xl">
+            <Wallet className=" text-black/70" />
+          </div>
           <div>
             <div className="text-gray-600 text-sm">
               Current earnings:{" "}
