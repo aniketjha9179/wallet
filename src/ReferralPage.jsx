@@ -5,6 +5,7 @@ import { useAnimation, motion } from "framer-motion";
 
 const ReferralPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentText, setCurrentText] = useState("2 Invite = ₹100");
 
   const topInviterData = [
     {
@@ -57,6 +58,9 @@ const ReferralPage = () => {
   };
 
   const controls = useAnimation();
+  const textControls = useAnimation();
+  const moneyImageControls = useAnimation(); // New animation control for money image
+  const textShineControls = useAnimation(); // New animation control for text shine effect
 
   useEffect(() => {
     const startShining = async () => {
@@ -76,6 +80,117 @@ const ReferralPage = () => {
     startShining();
   }, [controls]);
 
+  useEffect(() => {
+    const startTextShining = async () => {
+      while (true) {
+        // Reset position
+        await textShineControls.set({ x: "-150%", skewX: -12 });
+        // Wait 3 seconds
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+        // Animate from left to right
+        await textShineControls.start({
+          x: "250%",
+          transition: { duration: 1.5, ease: "easeOut" },
+        });
+      }
+    };
+
+    // Start text shine effect after initial text animation
+    setTimeout(() => {
+      startTextShining();
+    }, 2000);
+  }, [textShineControls]);
+
+  useEffect(() => {
+    const animateText = async () => {
+      // Initial animation - slide up from bottom
+      await textControls.start({
+        y: 0,
+        opacity: 1,
+        transition: { duration: 0.8, ease: "easeOut" }
+      });
+      
+      // Wait for 2 seconds
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      
+      // Slide down and change text
+      await textControls.start({
+        y: 50,
+        opacity: 0,
+        transition: { duration: 0.4, ease: "easeIn" }
+      });
+      
+      // Change text
+      setCurrentText("10 Invite = ₹500");
+      
+      // Slide up with new text
+      await textControls.start({
+        y: 0,
+        opacity: 1,
+        transition: { duration: 0.6, ease: "easeOut" }
+      });
+    };
+
+    animateText();
+  }, [textControls]);
+
+  // Money image animation effect on page load
+  useEffect(() => {
+    const animateMoneyImage = async () => {
+      // Start from bottom left with initial position and rotation
+      await moneyImageControls.set({
+        x: -200,
+        y: 300,
+        rotate: -45,
+        opacity: 0,
+      });
+
+      // Animate in a half-moon curve path to final position
+      await moneyImageControls.start({
+        x: 0,
+        y: 0,
+        rotate: 0,
+        opacity: 1,
+        transition: {
+          duration: 2.5,
+          ease: [0.25, 0.46, 0.45, 0.94], // Custom easing for smooth curve
+          x: {
+            type: "spring",
+            stiffness: 60,
+            damping: 15,
+          },
+          y: {
+            type: "spring", 
+            stiffness: 40,
+            damping: 12,
+          },
+          rotate: {
+            duration: 2.5,
+            ease: "easeOut",
+          },
+          opacity: {
+            duration: 0.3,
+            delay: 0.2,
+          }
+        },
+      });
+
+      // Add a subtle bounce effect when it settles
+      await moneyImageControls.start({
+        scale: [1, 1.05, 1],
+        transition: {
+          duration: 0.6,
+          ease: "easeInOut",
+        }
+      });
+    };
+
+    // Start animation after a small delay
+    setTimeout(() => {
+      animateMoneyImage();
+    }, 500);
+  }, [moneyImageControls]);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-orange-50 to-yellow-50 p-4 pb-20">
       {/* Header */}
@@ -92,22 +207,42 @@ const ReferralPage = () => {
         </div>
 
         <h2
-          className="text-4xl sm:text-6xl  md:text-9xl font-bold text-yellow-400 mb-4 sm:mb-6"
+          className="text-4xl sm:text-6xl  md:text-9xl font-bold text-yellow-400 mb-4 sm:mb-6 relative overflow-hidden"
           style={{ textShadow: "2px 2px 2px rgba(255, 172, 28)" }}
         >
-          10 Invite = ₹500
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={textControls}
+            className="relative inline-block"
+          >
+            {/* Framer Motion Shining effect for text */}
+            <motion.div
+              animate={textShineControls}
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/80 to-transparent pointer-events-none z-20"
+              style={{ 
+                skewX: -12,
+                width: '30%',
+                height: '100%'
+              }}
+            />
+            <span className="relative z-10">{currentText}</span>
+          </motion.div>
         </h2>
       </div>
 
-      {/* Money Image Above Top Inviters */}
+      {/* Money Image Above Top Inviters - Now with Animation */}
       <div className="flex justify-center ">
-        <div className="">
+        <motion.div
+          className=""
+          animate={moneyImageControls}
+          initial={{ x: -200, y: 300, rotate: -45, opacity: 0 }}
+        >
           <img
             src={MoneyImage}
             alt="Money and earnings"
             className="w-[400px] h-[260px] sm:w-[600px] sm:h-[350px]  -mb-28 z-0 "
           />
-        </div>
+        </motion.div>
       </div>
 
       {/* Top Inviters Card */}
@@ -284,8 +419,8 @@ const ReferralPage = () => {
                   Invite your friend
                 </h4>
                 <p className="text-sm text-gray-600 mb-3">
-                  Your friend must sign up using your unique link or referral
-                  code
+                 Share your referral link or code. Your friends must sign up using it.
+
                 </p>
               </div>
               <div className="flex-shrink-0">
@@ -306,19 +441,20 @@ const ReferralPage = () => {
                   STEP 2
                 </div>
                 <h4 className="font-bold text-gray-800 mb-1">
-                  Get ₹10 on your friend's first trade on Reapzo
+                  Earn 1% Commission
                 </h4>
                 <p className="text-sm text-gray-600 mb-3">
-                  You can also remind your friend by tapping on bell icon
+                Get 1% of your friend's winnings every time they win a game.
+
                 </p>
               </div>
               <div className="flex-shrink-0 flex flex-col items-center gap-2 ">
-                <button className="bg-blue-500 text-white px-3 py-1  rounded text-sm">
-                  Yes 5.5
+                {/* <button className="bg-blue-500 text-white px-3 py-1  rounded text-sm">
+           
                 </button>
                 <button className="bg-yellow-500 text-white px-2 py-1 rounded text-sm -ml-4 ">
-                  No 4.5
-                </button>
+             
+                </button> */}
               </div>
             </div>
 
@@ -332,11 +468,10 @@ const ReferralPage = () => {
                   STEP 3
                 </div>
                 <h4 className="font-bold text-gray-800 mb-1">
-                  Get ₹40 when your friend deposits
+                  Track & Grow
                 </h4>
                 <p className="text-sm text-gray-600">
-                  The first deposit should be greater than ₹100 to be eligible
-                  for this bonus
+                  Use the app's dashboard to track referrals and earnings. Remind friends to play and boost your rewards.
                 </p>
               </div>
               <div className="flex-shrink-0">
