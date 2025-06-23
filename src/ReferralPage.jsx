@@ -370,7 +370,7 @@ const ReferralPage = () => {
       </div>
 
       {/* Referral Code */}
-      <div className="bg-white rounded-xl shadow-lg p-3 mb-6">
+      <div className="bg-orange-50  rounded-xl shadow-lg p-3 mb-6">
         <div className="flex justify-between items-center">
           <div>
             <div className="text-gray-700 text-[10px] mb-1">REFERRAL CODE</div>
