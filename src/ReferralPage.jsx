@@ -395,8 +395,13 @@ const ReferralPage = () => {
               </div>
               <div className="flex flex-col items-center text-center">
                 <div className="relative mb-3">
-                  <Lightbulb className="w-10 h-10 text-yellow-500 fill-yellow-500" />
-                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div>
+                  <Lightbulb className="w-10 h-10 text-yellow-400 fill-yellow-500" />
+                  <div className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
+                  <div className="absolute -top-5 right-2 w-3 h-3 bg-gradient-to-b from-yellow-300 to-yellow-400 rounded-full animate-pulse"></div>
+                  <div className="absolute -top-5 right-6 w-2 h-2 bg-yellow-600 rounded-full animate-pulse"></div>
+                  <div className="absolute -top-1 right-9 w-3 h-3 bg-gradient-to-b from-yellow-300 to-yellow-600 rounded-full animate-pulse"></div>
+                  <div className="absolute top-4 right-9 w-1 h-1 bg-yellow-300 rounded-full animate-pulse"></div>
+                  <div className="absolute -top-4 -right-1 w-1 h-1 bg-yellow-300 rounded-full animate-pulse"></div>
                 </div>
                 <h3 className="text-lg font-bold text-gray-800">
                   How it works?
