@@ -408,7 +408,7 @@ const ReferralPage = () => {
           How it works ?
         </div>
         <div className="flex justify-center mt-2">
-          <div className="w-12 h-1 bg-gray-300 rounded"></div>
+          {/* <div className="w-12 h-1 bg-gray-300 rounded"></div> */}
         </div>
       </div>
 
