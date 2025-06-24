@@ -8,16 +8,16 @@ export default function DropshipSignIn() {
 
   return (
     <div className=" bg-white flex items-center justify-center  p-2">
-      <div className="w-full max-w-[370px]">
+      <div className="w-full max-w-[370px] ">
         {/* Logo - Outside the border */}
         <div className="flex justify-center  mt-3">
-          <div className="w8 h-8 rounded-lg flex items-center justify-center">
+          <div className="w-8 h-8 rounded-lg flex items-center justify-center">
             <img src='https://app.dropship.io/static/media/logo.361df1989e707f4fea980743a1f74c18.svg' className='w-7 h-7' />
           </div>
         </div>
 
         {/* Main container with border and shadow */}
-        <div className="bg-white rounded-2xl border border-gray-200    p-3"
+        <div className="bg-white rounded-2xl border border-gray-200 h-[390px]   p-4"
         style={{
     boxShadow: '0 1px 1px -1px rgba(59, 130, 100, 0.3), 0 0.2px 1px -1px rgba(59, 130, 246, 0.2)'
   }}
@@ -80,7 +80,7 @@ export default function DropshipSignIn() {
           </div>
 
           {/* Sign In Button */}
-          <button className="w-full bg-blue-600 text-white text-xs py-[10px] px-2 rounded-lg   hover:bg-blue-700 transition-colors">
+          <button className="w-full mt-1 bg-blue-600 text-white text-xs py-[10px] px-2 rounded-lg   hover:bg-blue-700 transition-colors">
             Sign In
           </button>
         </div>
