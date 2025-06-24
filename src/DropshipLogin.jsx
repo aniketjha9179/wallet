@@ -94,7 +94,7 @@ export default function DropshipSignIn() {
 
         {/* Create Account */}
        
-        <div className="text-center text-sm text-gray-600 mt-16">
+        <div className="text-center text-sm text-gray-600 mt-48">
           New to Dropship?{' '}
           <a href="#" className="text-blue-600 hover:text-blue-700 font-medium">
             Create account
