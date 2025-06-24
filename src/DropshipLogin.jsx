@@ -8,25 +8,25 @@ export default function DropshipSignIn() {
 
   return (
     <div className=" bg-white flex items-center justify-center  p-2">
-      <div className="w-full max-w-[400px]">
+      <div className="w-full max-w-[370px]">
         {/* Logo - Outside the border */}
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center mb-16 mt-3">
           <div className="w8 h-8 rounded-lg flex items-center justify-center">
-            <img src='https://app.dropship.io/static/media/logo.361df1989e707f4fea980743a1f74c18.svg' className='w-8 h-8' />
+            <img src='https://app.dropship.io/static/media/logo.361df1989e707f4fea980743a1f74c18.svg' className='w-7 h-7' />
           </div>
         </div>
 
         {/* Main container with border and shadow */}
-        <div className="bg-white rounded-2xl border border-gray-200    p-5"
+        <div className="bg-white rounded-2xl border border-gray-200    p-3"
         style={{
-    boxShadow: '0 4px 6px -1px rgba(59, 130, 246, 0.3), 0 0.2px 1px -1px rgba(59, 130, 246, 0.2)'
+    boxShadow: '0 1px 1px -1px rgba(59, 130, 100, 0.3), 0 0.2px 1px -1px rgba(59, 130, 246, 0.2)'
   }}
         >
           {/* Title */}
           <h1 className="text-sm font-semibold text-gray-900 text-center mb-2">
             Sign in to Dropship
           </h1>
-          <p className="text-gray-600 text-xs text-center mb-6">
+          <p className="text-gray-600 text-xs text-center mb-3">
             Welcome back! Sign in to your account below.
           </p>
 
@@ -94,7 +94,7 @@ export default function DropshipSignIn() {
 
         {/* Create Account */}
        
-        <div className="text-center text-sm text-gray-600 mt-48">
+        <div className="text-center text-sm text-gray-600 mt-36">
           New to Dropship?{' '}
           <a href="#" className="text-blue-600 hover:text-blue-700 font-medium">
             Create account
