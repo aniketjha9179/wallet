@@ -7,10 +7,10 @@ export default function DropshipSignIn() {
   const [password, setPassword] = useState('');
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center p-2">
+    <div className="min-h-screen bg-white flex items-center justify-center  p-2">
       <div className="w-full max-w-[400px]">
         {/* Logo - Outside the border */}
-        <div className="flex justify-center mb-16">
+        <div className="flex justify-center mb-8">
           <div className="w8 h-8 rounded-lg flex items-center justify-center">
             <img src='https://app.dropship.io/static/media/logo.361df1989e707f4fea980743a1f74c18.svg' className='w-8 h-8' />
           </div>
