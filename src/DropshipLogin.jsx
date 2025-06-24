@@ -10,7 +10,7 @@ export default function DropshipSignIn() {
     <div className=" bg-white flex items-center justify-center  p-2">
       <div className="w-full max-w-[370px]">
         {/* Logo - Outside the border */}
-        <div className="flex justify-center mb-16 mt-3">
+        <div className="flex justify-center  mt-3">
           <div className="w8 h-8 rounded-lg flex items-center justify-center">
             <img src='https://app.dropship.io/static/media/logo.361df1989e707f4fea980743a1f74c18.svg' className='w-7 h-7' />
           </div>
@@ -44,9 +44,9 @@ export default function DropshipSignIn() {
           </div>
 
           {/* Divider */}
-          <div className="flex items-center mb-6">
+          <div className="flex items-center mb-3">
             <div className="flex-1 border-t border-gray-300"></div>
-            <span className="px-4 text-[12px] text-gray-600 font-medium">or sign in with email</span>
+            <span className="px-4 text-[13px] text-gray-600 font-medium">or sign in with email</span>
             <div className="flex-1 border-t border-gray-300"></div>
           </div>
 
@@ -80,14 +80,14 @@ export default function DropshipSignIn() {
           </div>
 
           {/* Sign In Button */}
-          <button className="w-full bg-blue-600 text-white py-[2px] px-2 rounded-lg   hover:bg-blue-700 transition-colors">
+          <button className="w-full bg-blue-600 text-white text-xs py-[10px] px-2 rounded-lg   hover:bg-blue-700 transition-colors">
             Sign In
           </button>
         </div>
 
         {/* Forgot Password - Outside the border */}
         <div className="text-center mt-2">
-          <a href="#" className="text-blue-600 hover:text-blue-700 text-sm">
+          <a href="#" className="text-blue-600 text-xs hover:text-blue-700 font-semibold ">
             Forgot your password?
           </a>
         </div>
