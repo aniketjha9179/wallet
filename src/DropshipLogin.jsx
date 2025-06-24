@@ -17,7 +17,7 @@ export default function DropshipSignIn() {
         </div>
 
         {/* Main container with border and shadow */}
-        <div className="bg-white rounded-2xl border border-gray-200 h-[390px]   p-4"
+        <div className="bg-white rounded-2xl border border-gray-200    p-3"
         style={{
     boxShadow: '0 1px 1px -1px rgba(59, 130, 100, 0.3), 0 0.2px 1px -1px rgba(59, 130, 246, 0.2)'
   }}
