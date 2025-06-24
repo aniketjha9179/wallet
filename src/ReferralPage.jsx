@@ -360,7 +360,7 @@ const ReferralPage = () => {
       <div className="bg-orange-50 rounded-2xl shadow-lg p-3 mb-6">
         <div className="flex items-center gap-3">
           <div className="text-2xl">
-            <Wallet className=" text-black/70" />
+            <Wallet className=" text-black/70 w-4 h-4 " />
           </div>
           <div>
             <div className="text-gray-600 text-sm">
