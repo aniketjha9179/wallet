@@ -80,7 +80,7 @@ export default function DropshipSignIn() {
           </div>
 
           {/* Sign In Button */}
-          <button className="w-full bg-blue-600 text-white py-1 px-2 rounded-lg    hover:bg-blue-700 transition-colors">
+          <button className="w-full bg-blue-600 text-white py-[2px] px-2 rounded-lg   hover:bg-blue-700 transition-colors">
             Sign In
           </button>
         </div>
