@@ -7,7 +7,7 @@ export default function DropshipSignIn() {
   const [password, setPassword] = useState('');
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center  p-2">
+    <div className=" bg-white flex items-center justify-center  p-2">
       <div className="w-full max-w-[400px]">
         {/* Logo - Outside the border */}
         <div className="flex justify-center mb-8">
