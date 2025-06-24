@@ -7,8 +7,8 @@ import DropshipLogin from './DropshipLogin'
 
 const App = () => {
   return (
-    <DropshipLogin />
+    <ReferralPage />
   )
 }
 
-export default App
+export default App;
