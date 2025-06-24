@@ -10,7 +10,7 @@ export default function DropshipSignIn() {
     <div className=" bg-white flex items-center justify-center  p-2">
       <div className="w-full max-w-[370px] ">
         {/* Logo - Outside the border */}
-        <div className="flex justify-center  mt-3">
+        <div className="flex justify-center  mb-10 mt-3">
           <div className="w-8 h-8 rounded-lg flex items-center justify-center">
             <img src='https://app.dropship.io/static/media/logo.361df1989e707f4fea980743a1f74c18.svg' className='w-7 h-7' />
           </div>
