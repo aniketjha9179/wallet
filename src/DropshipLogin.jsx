@@ -232,7 +232,7 @@ export default function DropshipSignIn() {
           />
         </div>
         
-        <div className="w-full bg-white p-6  rounded-[28px] shadow-[0_10px_40px_rgba(0,0,0,0.05)]" style={{maxWidth: '450px'}}>
+        <div className="w-full bg-white p-6  rounded-[28px] shadow-[0_10px_40px_rgba(0,0,0,0.05)]" style={{maxWidth: '400px'}}>
           <h2 className="text-sm font-semibold text-center text-black mb-2">
             Sign in to Dropship
           </h2>
@@ -271,7 +271,7 @@ export default function DropshipSignIn() {
           <div className="space-y-3 text-left">
             <input 
               placeholder="Email Address" 
-              className="w-full border border-gray-300 rounded-lg px-4 py-2 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500  placeholder:text-gray-400 placeholder:text-xs" 
+              className="w-full border h-[40px] border-gray-300 rounded-lg px-4 py-2 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500  placeholder:text-gray-400 placeholder:text-xs" 
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -280,7 +280,7 @@ export default function DropshipSignIn() {
             <div className="relative">
               <input 
                 placeholder="Password" 
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400 placeholder:text-xs"
+                className="w-full border h-[40px] border-gray-300 rounded-lg px-4 py-2 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400 placeholder:text-xs"
                 type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -295,7 +295,7 @@ export default function DropshipSignIn() {
             
             <button 
               type="submit" 
-              className="w-full bg-[#2563eb] text-white py-2.5 rounded-xl font-semibold hover:bg-blue-700 transition text-xs shadow-[0_4px_6px_-1px_rgba(0,0,0,0.3)]"
+              className="w-full bg-[#1d1d1e] border border-[#fff3] bg-gradient-to-b from-[#ffffff26] to-[#fff0]  text-white py-[10px] rounded-xl font-semibold  transition text-xs shadow-[0_4px_6px_-1px_rgba(0,0,0,0.3)]"
             >
               Sign In
             </button>
