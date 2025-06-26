@@ -244,7 +244,7 @@ export default function DropshipSignIn() {
             <button className="border border-gray-200 bg-white rounded-xl py-2 px-2 flex items-center justify-center hover:bg-gray-100 text-sm  text-black">
               <img 
                 alt="Google" 
-                className="h-4 w-4 mr-2" 
+                className="h-6 w-6 mr-2" 
                 src="https://brandlogos.net/wp-content/uploads/2025/05/google_icon_2025-logo_brandlogos.net_qm5ka-512x523.png"
               />
               Google
@@ -252,7 +252,7 @@ export default function DropshipSignIn() {
             <button className="border border-gray-200 bg-white rounded-xl py-2 px-2 flex items-center justify-center hover:bg-gray-100 text-sm  text-black">
               <img 
                 alt="Apple" 
-                className="h-4 w-4 mr-2" 
+                className="h-6 w-6 mr-2" 
                 src="https://e7.pngegg.com/pngimages/912/682/png-clipart-apple-logo-brand-apple-company-trademark-thumbnail.png"
               />
               Apple
