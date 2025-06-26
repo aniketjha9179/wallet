@@ -8,7 +8,7 @@ export default function DropshipSignIn() {
   const [password, setPassword] = useState('');
 
   return (
-    <div className="min-h-screen w-full bg-white p-2">
+    <div className="min-h-screen w-full bg-white p-2 py-4">
       <div className="min-h-screen flex flex-col justify-center items-center  ">
         <div className=" ">
           <img 
