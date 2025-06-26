@@ -222,7 +222,7 @@ export default function DropshipSignIn() {
   const [password, setPassword] = useState('');
 
   return (
-    <div className="min-h-screen w-full bg-white">
+    <div className="min-h-screen w-full bg-white p-4">
       <div className="min-h-screen flex flex-col justify-center items-center  ">
         <div className=" ">
           <img 
@@ -241,7 +241,7 @@ export default function DropshipSignIn() {
           </p>
           
           <div className="grid grid-cols-2 gap-4 mb-4">
-            <button className="border border-gray-200 bg-white rounded-xl py-2 px-2 flex items-center justify-center hover:bg-gray-100 text-sm  text-black">
+            <button className="border border-gray-200 bg-white rounded-xl py-2 px-1 flex items-center justify-center hover:bg-gray-100 text-sm  text-black">
               <img 
                 alt="Google" 
                 className="h-5 w-5 mr-2" 
