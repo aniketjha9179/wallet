@@ -7,7 +7,7 @@ import DropshipLogin from './DropshipLogin'
 
 const App = () => {
   return (
-    <ReferralPage />
+    <DropshipLogin />
   )
 }
 
