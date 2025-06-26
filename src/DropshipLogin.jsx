@@ -232,7 +232,7 @@ export default function DropshipSignIn() {
           />
         </div>
         
-        <div className="w-full bg-white p-2  rounded-[28px] shadow-[0_10px_40px_rgba(0,0,0,0.05)]" style={{maxWidth: '450px'}}>
+        <div className="w-full bg-white  sm:p-6 md:p-5  rounded-[28px] shadow-[0_10px_40px_rgba(0,0,0,0.05)]" style={{maxWidth: '450px'}}>
           <h2 className="text-sm font-semibold text-center text-black mb-2">
             Sign in to Dropship
           </h2>
