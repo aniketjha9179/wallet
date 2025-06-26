@@ -81,7 +81,7 @@ export default function DropshipSignIn() {
             
             <button 
               type="submit" 
-              className="w-full bg-[#1d1d1e] border border-[#fff3] bg-gradient-to-b from-[#ffffff26] to-[#fff0]  text-white py-[10px] rounded-lg   transition text-[15px] font-semibold shadow-[0_4px_6px_-1px_rgba(0,0,0,0.3)]"
+              className="w-full bg-[#1d1d1e] border border-[#fff3] bg-gradient-to-b from-[#ffffff26] to-[#fff0]  text-white py-[10px] rounded-[10.5px]   transition text-[15px] font-semibold shadow-[0_4px_6px_-1px_rgba(0,0,0,0.3)]"
             
             >
               Sign In
