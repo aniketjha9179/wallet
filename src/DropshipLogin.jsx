@@ -7,19 +7,19 @@ export default function DropshipSignIn() {
   const [password, setPassword] = useState('');
 
   return (
-    <div className=" bg-white flex items-center justify-center  p-2">
-      <div className="w-full max-w-[370px] ">
+    <div className="min-h-screen flex items-center justify-center p-4 sm:p-10">
+      <div className="w-full max-w-[420px] mx-auto">
         {/* Logo - Outside the border */}
-        <div className="flex justify-center  mb-10 mt-3">
+        <div className="flex justify-center mb-6 sm:mb-10 mt-3">
           <div className="w-8 h-8 rounded-lg flex items-center justify-center">
             <img src='https://app.dropship.io/static/media/logo.361df1989e707f4fea980743a1f74c18.svg' className='w-7 h-7' />
           </div>
         </div>
 
         {/* Main container with border and shadow */}
-        <div className="bg-white rounded-2xl border border-gray-200    p-3"
+        <div className="bg-white rounded-2xl p-4 sm:p-3 shadow-[0_10px_40px_rgba(0,0,0,0.05)]"
         style={{
-    boxShadow: '0 1px 1px -1px rgba(59, 130, 100, 0.3), 0 0.2px 1px -1px rgba(59, 130, 246, 0.2)'
+   
   }}
         >
           {/* Title */}
@@ -46,7 +46,7 @@ export default function DropshipSignIn() {
           {/* Divider */}
           <div className="flex items-center mb-3">
             <div className="flex-1 border-t border-gray-300"></div>
-            <span className="px-4 text-[13px] text-gray-600 font-medium">or sign in with email</span>
+            <span className="px-4 text-[13px] text-gray-700 font-medium">or sign in with email</span>
             <div className="flex-1 border-t border-gray-300"></div>
           </div>
 
@@ -57,7 +57,7 @@ export default function DropshipSignIn() {
               placeholder="Email Address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-1 border border-gray-300 rounded-lg placeholder:text-xs placeholder:text-gray-200  hover:ring-1 hover:ring-blue-500 focus:ring-1 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+              className="w-full px-4 py-1 border border-gray-300 rounded-lg placeholder:text-xs placeholder:text-gray-400  hover:ring-1 hover:ring-blue-500 focus:ring-1 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
             />
           </div>
 
@@ -68,7 +68,7 @@ export default function DropshipSignIn() {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-1 pr-12 placeholder:text-xs placeholder:text-gray-200 border border-gray-300 rounded-lg hover:ring-1 hover:ring-blue-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+              className="w-full px-4 py-1 pr-12 placeholder:text-xs placeholder:text-gray-400 border border-gray-300 rounded-lg hover:ring-1 hover:ring-blue-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
             />
             <button
               type="button"
@@ -80,7 +80,7 @@ export default function DropshipSignIn() {
           </div>
 
           {/* Sign In Button */}
-          <button className="w-full mt-1 bg-blue-600 text-white text-xs py-[10px] px-2 rounded-lg   hover:bg-blue-700 transition-colors">
+          <button className="w-full bg-blue-600 text-white py-[6px] rounded-xl font-semibold hover:bg-blue-700 transition text-sm shadow-[0_4px_6px_-1px_rgba(0,0,0,0.3)]">
             Sign In
           </button>
         </div>
@@ -94,7 +94,7 @@ export default function DropshipSignIn() {
 
         {/* Create Account */}
        
-        <div className="text-center text-sm text-gray-600 mt-36">
+        <div className="text-center text-sm text-gray-600 ">
           New to Dropship?{' '}
           <a href="#" className="text-blue-600 hover:text-blue-700 font-medium">
             Create account
