@@ -57,7 +57,7 @@ export default function DropshipSignIn() {
           <div className="space-y-3 text-left">
             <input 
               placeholder="Email Address" 
-              className="w-full border h-[40px] border-gray-300 rounded-lg px-4 py-2 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500  placeholder:text-gray-400 placeholder:text-xs" 
+              className="w-full border h-[37px] border-gray-300 rounded-lg px-4 py-2 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500  placeholder:text-gray-400 placeholder:text-xs" 
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -66,7 +66,7 @@ export default function DropshipSignIn() {
             <div className="relative">
               <input 
                 placeholder="Password" 
-                className="w-full border h-[40px] border-gray-300 rounded-lg px-4 py-2 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400 placeholder:text-xs"
+                className="w-full border h-[37px] border-gray-300 rounded-lg px-4 py-2 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400 placeholder:text-xs"
                 type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
