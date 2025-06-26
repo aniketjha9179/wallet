@@ -227,7 +227,7 @@ export default function DropshipSignIn() {
         <div className=" ">
           <img 
             alt="Logo" 
-            className="h-6 mb-7 " 
+            className="h-8 mb-7 " 
             src="https://app.dropship.io/static/media/logo.361df1989e707f4fea980743a1f74c18.svg"
           />
         </div>
